@@ -42,6 +42,11 @@ public class MainActivity2 extends AppCompatActivity  implements View.OnClickLis
                 startActivity(i);
                 break;
 
+            case R.id.card_5 :
+                i=new Intent(this,Gallery.class);
+                startActivity(i);
+                break;
+
         }
     }
 }
