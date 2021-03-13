@@ -2,7 +2,6 @@ package com.example.acm;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,33 +16,29 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AddFaculty extends AppCompatActivity {
+public class primeCore extends AppCompatActivity {
     DatabaseReference OData;
 
     // Creating RecyclerView.
     RecyclerView recyclerView;
 
     // Creating RecyclerView.Adapter.
-    AddfacultyRecycler adapter;
+    PrimeCoreRecycler adapter;
     String currentuser = "";
 
 
     // Creating List of ImageUploadInfo class.
     List<facultymodel> list = new ArrayList<>();
 
-
-    // Creating List of ImageUploadInfo class.
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_faculty);
-        recyclerView = (RecyclerView) findViewById(R.id.add_fac);
+        setContentView(R.layout.activity_prime_core);
+        recyclerView = (RecyclerView) findViewById(R.id.rv);
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(AddFaculty.this));
+        recyclerView.setLayoutManager(new LinearLayoutManager(primeCore.this));
 
-        OData = FirebaseDatabase.getInstance().getReference("Members Details").child("Faculty");
+        OData = FirebaseDatabase.getInstance().getReference("Members Details").child("Prime Core");
 
         OData.addValueEventListener(new ValueEventListener() {
             @Override
@@ -55,7 +50,7 @@ public class AddFaculty extends AppCompatActivity {
                     list.add(imageUploadInfo);
                 }
 
-                adapter = new AddfacultyRecycler(getApplicationContext(), list);
+                adapter = new PrimeCoreRecycler(getApplicationContext(), list);
 
                 recyclerView.setAdapter(adapter);
             }
@@ -68,3 +63,4 @@ public class AddFaculty extends AppCompatActivity {
 
     }
 }
+

@@ -11,7 +11,10 @@
         android:roundIcon="@drawable/acm"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Gallery"></activity>
+        <activity android:name=".CoreMembers"></activity>
+        <activity android:name=".primeCore" />
+        <activity android:name=".teamPage" />
+        <activity android:name=".Gallery" />
         <activity android:name=".Notices" />
         <activity android:name=".AddFaculty" />
         <activity android:name=".Test" />
