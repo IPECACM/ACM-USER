@@ -25,9 +25,9 @@ private ImageView map;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        drawerLayout=(DrawerLayout)findViewById(R.id.drawerlayout);
-        navigationView=(NavigationView) findViewById(R.id.nav_view);
-        map=(ImageView)findViewById(R.id.map);
+//        drawerLayout = (DrawerLayout) findViewById(R.id.drawerlayout);
+//        navigationView = (NavigationView) findViewById(R.id.nav_view);
+        map = (ImageView) findViewById(R.id.map);
 
         map.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,41 +35,42 @@ private ImageView map;
                 openmap();
             }
         });
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item .getItemId())
-                {
-                    case R.id.mitem1:
-                        Intent i= new Intent(MainActivity.this,AddFaculty.class);
-                        startActivity(i);
-                        Toast.makeText(MainActivity.this, " Faculty", Toast.LENGTH_SHORT).show();
-                        return  true;
-                }
-                switch (item .getItemId())
-                {
-                    case R.id.mitem2:
-                        Intent i= new Intent(MainActivity.this,Notices.class);
-                        startActivity(i);
-                        Toast.makeText(MainActivity.this, " Item2", Toast.LENGTH_SHORT).show();
-
-                        return  true;
-                }
-                switch (item .getItemId())
-                {
-                    case R.id.mitem3:
-                        Intent i = new Intent(MainActivity.this,Test.class);
-                        startActivity(i);
-                        return  true;
-                }
-                return true;
-            }
-        });
-        actionBarDrawerToggle= new ActionBarDrawerToggle(this, drawerLayout, R.string.open,R.string.close);
-        drawerLayout.addDrawerListener(actionBarDrawerToggle);
-        actionBarDrawerToggle.syncState();
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
+//        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+//            @Override
+//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//                switch (item .getItemId())
+//                {
+//                    case R.id.mitem1:
+//                        Intent i= new Intent(MainActivity.this,AddFaculty.class);
+//                        startActivity(i);
+//                        Toast.makeText(MainActivity.this, " Faculty", Toast.LENGTH_SHORT).show();
+//                        return  true;
+//                }
+//                switch (item .getItemId())
+//                {
+//                    case R.id.mitem2:
+//                        Intent i= new Intent(MainActivity.this,Notices.class);
+//                        startActivity(i);
+//                        Toast.makeText(MainActivity.this, " Item2", Toast.LENGTH_SHORT).show();
+//
+//                        return  true;
+//                }
+//                switch (item .getItemId())
+//                {
+//                    case R.id.mitem3:
+//                        Intent i = new Intent(MainActivity.this,Test.class);
+//                        startActivity(i);
+//                        return  true;
+//                }
+//                return true;
+//            }
+//        });
+//        actionBarDrawerToggle= new ActionBarDrawerToggle(this, drawerLayout, R.string.open,R.string.close);
+//        drawerLayout.addDrawerListener(actionBarDrawerToggle);
+//        actionBarDrawerToggle.syncState();
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//    }
 
     private void openmap()
     {
@@ -79,12 +80,12 @@ private ImageView map;
         startActivity(i);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(actionBarDrawerToggle.onOptionsItemSelected(item))
-        {
-            return  true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
+//    @Override
+//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+//        if(actionBarDrawerToggle.onOptionsItemSelected(item))
+//        {
+//            return  true;
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
 }

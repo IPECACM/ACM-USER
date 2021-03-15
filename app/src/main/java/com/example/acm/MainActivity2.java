@@ -32,22 +32,26 @@ public class MainActivity2 extends AppCompatActivity  implements View.OnClickLis
     public void onClick(View view) {
         Intent i;
 
-        switch(view.getId()){
-            case R.id.card_2 :
-                i=new Intent(this,AddFaculty.class);
+        switch (view.getId()) {
+            case R.id.card_1:
+                i = new Intent(this, about_us.class);
                 startActivity(i);
                 break;
-            case R.id.card_4 :
-                i=new Intent(this,Notices.class);
+            case R.id.card_2:
+                i = new Intent(this, AddFaculty.class);
+                startActivity(i);
+                break;
+            case R.id.card_4:
+                i = new Intent(this, Notices.class);
                 startActivity(i);
                 break;
 
-            case R.id.card_5 :
-                i=new Intent(this,Gallery.class);
+            case R.id.card_5:
+                i = new Intent(this, Gallery.class);
                 startActivity(i);
                 break;
-            case  R.id.card_3:
-                i=new Intent(this,teamPage.class);
+            case R.id.card_3:
+                i = new Intent(this, teamPage.class);
                 startActivity(i);
                 break;
 
