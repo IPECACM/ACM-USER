@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.acm.ui.login.LoginActivity;
+
 public class MainActivity2 extends AppCompatActivity  implements View.OnClickListener{
 
     public CardView card1,card2,card3,card4,card5;
@@ -38,7 +40,7 @@ public class MainActivity2 extends AppCompatActivity  implements View.OnClickLis
                 startActivity(i);
                 break;
             case R.id.card_2:
-                i = new Intent(this, AddFaculty.class);
+                i = new Intent(this, LoginActivity.class);
                 startActivity(i);
                 break;
             case R.id.card_4:
