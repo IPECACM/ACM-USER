@@ -18,8 +18,8 @@ import com.google.android.material.navigation.NavigationView;
 public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle actionBarDrawerToggle;
-private NavigationView navigationView;
-private ImageView map;
+    private NavigationView navigationView;
+    private ImageView map;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

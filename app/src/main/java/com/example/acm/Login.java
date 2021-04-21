@@ -3,6 +3,7 @@ package com.example.acm;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -60,6 +61,10 @@ public class Login extends AppCompatActivity {
                 if(task.isSuccessful())
                 {
                     Toast.makeText(Login.this,"Logged In Successfully",Toast.LENGTH_SHORT).show();
+                    email.setText(" ");
+                    password.setText(" ");
+                    Intent i= new Intent(Login.this,ChooseSig.class);
+                    startActivity(i);
 
                 }
                 else
