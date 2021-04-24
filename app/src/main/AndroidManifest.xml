@@ -11,7 +11,8 @@
         android:roundIcon="@drawable/acm"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ChooseSig"></activity>
+        <activity android:name=".sig_selection"></activity>
+        <activity android:name=".ChooseSig" />
         <activity android:name=".Login" />
         <activity
             android:name=".ui.login.LoginActivity"

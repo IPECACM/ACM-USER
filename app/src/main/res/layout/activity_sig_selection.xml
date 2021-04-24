@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".sig_selection">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SIG SELECTION"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="50dp"
+        android:paddingLeft="20dp"
+        android:paddingTop="20dp"
+        ></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="*NOTE:- SIG TECH is mandatory for all you can choose 2 more SIG'S other that SIG TECH
+. SIG GRAPH AND SIG WEB ARE bind together ,So if you choose SIG WEB than SIG GRAPH is compulsory and viceversa
+ You can have maximum of 3 SIG'S and minimum of 1 that is SIG TECH."
+        android:textColor="@color/black"
+        android:paddingTop="30dp"
+        android:textStyle="bold"
+        android:paddingLeft="10dp"
+        android:paddingRight="20dp"
+        ></TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="First Choice :-"
+            android:paddingTop="20dp"
+            android:paddingLeft="5dp"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/black">
+        </TextView>
+
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="58dp"
+            android:weightSum="1">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.13"
+                android:checked="false"
+                android:text="SIG PYTHON"
+                android:textSize="20dp" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.13"
+                android:checked="false"
+                android:text="SIG SOFT"
+                android:textSize="20dp" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.13"
+                android:checked="false"
+                android:text="SIG GRAPH + SIG WEB"
+                android:textSize="20dp" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.13"
+                android:checked="false"
+                android:text="SIG FOUNDATION"
+                android:textSize="20dp" />
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Second Choice :-"
+            android:paddingTop="20dp"
+            android:paddingLeft="5dp"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/black">
+        </TextView>
+
+
+        <RadioGroup
+            android:id="@+id/radioGroup2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="58dp"
+            android:weightSum="1">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.13"
+                android:checked="false"
+                android:text="SIG PYTHON"
+                android:textSize="20dp" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.13"
+                android:checked="false"
+                android:text="SIG SOFT"
+                android:textSize="20dp" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.13"
+                android:checked="false"
+                android:text="SIG GRAPH + SIG WEB"
+                android:textSize="20dp" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.13"
+                android:checked="false"
+                android:text="SIG FOUNDATION"
+                android:textSize="20dp" />
+        </RadioGroup>
+
+    </LinearLayout>
+
+
+</LinearLayout>
