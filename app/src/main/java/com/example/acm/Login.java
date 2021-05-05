@@ -63,7 +63,7 @@ public class Login extends AppCompatActivity {
                     Toast.makeText(Login.this,"Logged In Successfully",Toast.LENGTH_SHORT).show();
                     email.setText(" ");
                     password.setText(" ");
-                    Intent i= new Intent(Login.this,ChooseSig.class);
+                    Intent i= new Intent(Login.this,DisplayTask.class);
                     startActivity(i);
 
                 }

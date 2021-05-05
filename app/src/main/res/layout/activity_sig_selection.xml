@@ -55,6 +55,7 @@
             android:weightSum="1">
 
             <RadioButton
+                android:id="@+id/rb1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.13"
@@ -63,6 +64,7 @@
                 android:textSize="20dp" />
 
             <RadioButton
+                android:id="@+id/rb2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.13"
@@ -71,6 +73,7 @@
                 android:textSize="20dp" />
 
             <RadioButton
+                android:id="@+id/rb3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.13"
@@ -79,6 +82,7 @@
                 android:textSize="20dp" />
 
             <RadioButton
+                android:id="@+id/rb4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.13"
@@ -114,6 +118,7 @@
             android:weightSum="1">
 
             <RadioButton
+                android:id="@+id/r1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.13"
@@ -122,6 +127,7 @@
                 android:textSize="20dp" />
 
             <RadioButton
+                android:id="@+id/r2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.13"
@@ -130,6 +136,7 @@
                 android:textSize="20dp" />
 
             <RadioButton
+                android:id="@+id/r3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.13"
@@ -138,6 +145,7 @@
                 android:textSize="20dp" />
 
             <RadioButton
+                android:id="@+id/r4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.13"
@@ -147,6 +155,12 @@
         </RadioGroup>
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SUBMIT"/>
 
 
 </LinearLayout>

@@ -32,7 +32,7 @@ TextView test;
         databaseReference= FirebaseDatabase.getInstance().getReference();
         Fauth=FirebaseAuth.getInstance();
         test=findViewById(R.id.text);
-        final DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Student Details").child(Fauth.getCurrentUser().getUid());
+        final DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Student Details").child(Fauth.getUid());
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
