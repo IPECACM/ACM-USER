@@ -108,8 +108,8 @@ public class sig_selection extends AppCompatActivity {
             studentMap.put("Choice1",web.getText().toString());
         if (foundation.isChecked())
             studentMap.put("Choice1",foundation.getText().toString());
-        else
-            studentMap.put("Choice1"," ");
+//        else
+//            studentMap.put("Choice1"," ");
 
         databaseReference.child("Student Details").child(Fauth.getCurrentUser().getUid()).updateChildren(studentMap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
@@ -129,8 +129,8 @@ public class sig_selection extends AppCompatActivity {
             studentMapnew.put("Choice2",web1.getText().toString());
         if (found1.isChecked())
             studentMapnew.put("Choice2",found1.getText().toString());
-        else
-        studentMap.put("Choice2","  ");
+//        else
+//        studentMap.put("Choice2","  ");
 
 
         databaseReference.child("Student Details").child(Fauth.getCurrentUser().getUid()).updateChildren(studentMapnew).addOnCompleteListener(new OnCompleteListener<Void>() {

@@ -99,18 +99,20 @@ public class DisplayTask extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 list.clear();
-                String Choice0=snapshot.child(FAuth.getCurrentUser().getUid()).child("Choice0").getValue().toString();
-                list.add(Choice0);
-                String Choice1=snapshot.child(FAuth.getCurrentUser().getUid()).child("Choice1").getValue().toString();
-                list.add(Choice1);
-                String Choice2=snapshot.child(FAuth.getCurrentUser().getUid()).child("Choice2").getValue().toString();
-                list.add(Choice2);
-                Log.i("skfksjdkfskv",Choice1);
+                if (snapshot.exists()) {
+                    String Choice0 = snapshot.child(FAuth.getCurrentUser().getUid()).child("Choice0").getValue().toString();
+                    list.add(Choice0);
+                    String Choice1 = snapshot.child(FAuth.getCurrentUser().getUid()).child("Choice1").getValue().toString();
+                    list.add(Choice1);
+                    String Choice2 = snapshot.child(FAuth.getCurrentUser().getUid()).child("Choice2").getValue().toString();
+                    list.add(Choice2);
+                    Log.i("skfksjdkfskv", Choice1);
 
-                adapter=new ArrayAdapter<>(DisplayTask.this, android.R.layout.simple_list_item_1,list);
-                listView.setAdapter(adapter);
+
+                    adapter = new ArrayAdapter<>(DisplayTask.this, android.R.layout.simple_list_item_1, list);
+                    listView.setAdapter(adapter);
+                }
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
