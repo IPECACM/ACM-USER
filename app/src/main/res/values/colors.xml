@@ -16,6 +16,8 @@
 
     <color name="lemon_chiffon">#FFFACD</color>
 
+    <color name="transparent">#00000000</color>
+
     <color name="cornsilk">#FFF8DC</color>
 
     <color name="seashell">#FFF5EE</color>
