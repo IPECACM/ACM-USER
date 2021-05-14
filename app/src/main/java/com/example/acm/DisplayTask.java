@@ -12,8 +12,10 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -31,8 +33,9 @@ public class DisplayTask extends AppCompatActivity {
     FirebaseAuth FAuth;
     List<String> list;
     ListView listView;
+    FirebaseUser firebaseUser;
     ArrayAdapter<String> adapter;
-    private Button Choose;
+    private Button Choose,Logout;
 //    private TextView choice0;
 //    private TextView choice1;
 //    private TextView choice2;
@@ -49,6 +52,9 @@ public class DisplayTask extends AppCompatActivity {
         list=new ArrayList<>();
         Choose=findViewById(R.id.choose);
         FAuth = FirebaseAuth.getInstance();
+        Logout=findViewById(R.id.logout);
+        FAuth=FirebaseAuth.getInstance();
+        firebaseUser=FAuth.getCurrentUser();
 
         OData = FirebaseDatabase.getInstance().getReference().child("Student Details");
 
@@ -72,6 +78,7 @@ public class DisplayTask extends AppCompatActivity {
                 if(status.equals("false"))
                 {
                     Choose.setEnabled(false);
+
 
                 }
                 else {
@@ -126,6 +133,19 @@ public class DisplayTask extends AppCompatActivity {
                 Intent i = new Intent(getApplicationContext(), Test.class);
                 i.putExtra("current", currentobj);
                 startActivity(i);
+
+            }
+        });
+
+        Logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                Intent i= new Intent(DisplayTask.this,Login.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(i);
+
 
             }
         });

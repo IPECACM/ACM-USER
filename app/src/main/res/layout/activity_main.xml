@@ -13,85 +13,116 @@
         android:layout_height="match_parent">
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-
-        <ViewFlipper
-            android:id="@+id/viewFlipper"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="295dp"
-            android:autoStart="true"
-            android:flipInterval="2000"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="match_parent">
 
 
-            <ImageView
+            <ViewFlipper
+                android:id="@+id/viewFlipper"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_height="295dp"
+                android:autoStart="true"
+                android:flipInterval="2000"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-                android:background="@drawable/ipec">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+
+                    android:background="@drawable/ipec">
 
 
-            </ImageView>
+                </ImageView>
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:background="@drawable/acm">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:background="@drawable/acm">
 
-            </ImageView>
-        </ViewFlipper>
+                </ImageView>
+            </ViewFlipper>
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="270dp"
-            android:text="ABOUT ACM"
-            android:textColor="#000000"
-            android:textSize="30dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/viewFlipper"
-            app:layout_constraintVertical_bias="0.0" />
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="270dp"
+                android:text="ABOUT ACM"
+                android:textColor="#000000"
+                android:textSize="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/viewFlipper"
+                app:layout_constraintVertical_bias="0.0" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ACM, the Association for Computing Machinery founded in New York on September 15, 1947, is the world’s largest educational and scientific society connecting and convening the researchers, educators and professionals to apportion resources, inspire discourse and scrutinize and address the field’s challenges.
+            <!--        <ImageView-->
+            <!--            android:id="@+id/map"-->
+            <!--            android:layout_width="412dp"-->
+            <!--            android:layout_height="238dp"-->
+            <!--            android:background="@drawable/map"-->
+            <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--            app:layout_constraintEnd_toEndOf="parent"-->
+            <!--            app:layout_constraintHorizontal_bias="1.0"-->
+            <!--            app:layout_constraintStart_toStartOf="parent"-->
+            <!--            app:layout_constraintTop_toBottomOf="@+id/textView2"-->
+            <!--            app:layout_constraintVertical_bias="1.0">-->
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="450dp"
+                android:text="ACM, the Association for Computing Machinery founded in New York on September 15, 1947, is the world’s largest educational and scientific society connecting and convening the researchers, educators and professionals to apportion resources, inspire discourse and scrutinize and address the field’s challenges.
 
 The IPEC ACM Student Chapter is an organized representative association that upholds the right of students, develop high standards of honour and civic responsibility and promote cooperation between the student body, faculty, and administration.
 The Chapter is chartered by ACM and operated exclusively for educational and scientific purposes to promote an increased knowledge of and greater interest in the contributions of science, design, development, languages, management and applications of modern computing,improvement of the learning and working environments of students in computing and a means of communication between the persons having interest in computing.
 "
-            android:textAlignment="center"
-            android:textSize="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:layout_constraintVertical_bias="0.044" />
-
-        <ImageView
-            android:layout_width="410dp"
-            android:layout_height="247dp"
-            android:id="@+id/map"
-            android:background="@drawable/map"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2"
-            app:layout_constraintVertical_bias="1.0">
+                android:textAlignment="center"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                app:layout_constraintVertical_bias="0.0" />
 
 
-        </ImageView>
+            <ImageView
+                android:id="@+id/insta"
+                android:layout_width="41dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="64dp"
+                android:src="@drawable/instagram"
+                app:layout_constraintEnd_toStartOf="@+id/fb"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+            <ImageView
+                android:id="@+id/fb"
+
+                android:layout_width="59dp"
+                android:layout_height="47dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="60dp"
+                android:src="@drawable/fb"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+            <ImageView
+                android:id="@+id/map"
+
+                android:layout_width="55dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/direction"
+                app:layout_constraintEnd_toStartOf="@+id/insta"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 

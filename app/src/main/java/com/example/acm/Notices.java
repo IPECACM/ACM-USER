@@ -44,6 +44,7 @@ public class Notices extends AppCompatActivity {
         OData.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                list.clear();
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
 
                     noticemodel imageUploadInfo = postSnapshot.getValue(noticemodel.class);

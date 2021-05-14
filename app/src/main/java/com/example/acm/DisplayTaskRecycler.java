@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.SubMenu;
 import android.view.View;
@@ -70,14 +71,16 @@ public class DisplayTaskRecycler extends FirebaseRecyclerAdapter<choicemodel,Dis
             @Override
             public void onClick(View v) {
 
-                DatabaseReference ref= FirebaseDatabase.getInstance().getReference("Student Details").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                final DatabaseReference ref= FirebaseDatabase.getInstance().getReference("Student Details").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
                 HashMap<String, Object> studentMap = new HashMap<>();
-                studentMap.put("isDone","pending");
+                studentMap.put("isDone","Under Review");
 
                 ref.child("Tasks").child(UploadInfo.getSIG()).child(UploadInfo.getName()).setValue(studentMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
+
                       //  Toast.makeText(context, "gvghkmjh", Toast.LENGTH_SHORT).show();
+                        //Log.i("djklewjdkd",ref.child("Tasks").child(UploadInfo.getSIG()).child(UploadInfo.getName()).child("isDone").toString());
                     }
                 });
 

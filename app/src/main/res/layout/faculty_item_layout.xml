@@ -4,45 +4,62 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:padding="16dp">
+    android:padding="6dp">
 
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@mipmap/ic_launcher"
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/fimage"
-        android:padding="5dp"/>
+        android:layout_width="66dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="10dp"
+        android:padding="5dp"
+        android:src="@mipmap/ic_launcher" />
+
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="288dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
         android:orientation="vertical">
+
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Name"
-            android:textColor="#000"
-            android:textStyle="bold"
-            android:layout_margin="3dp"
             android:id="@+id/fname"
-            android:textSize="20sp"/>
-        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:hint="Name"
+            android:textColor="#000080"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/fpost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
             android:hint="Post"
             android:textColor="#000"
-            android:textStyle="bold"
-            android:layout_margin="3dp"
-            android:id="@+id/fpost"
-            android:textSize="20sp"/>
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
         <TextView
+            android:id="@+id/femail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Email"
-            android:id="@+id/femail"
-            android:textColor="#a9a9a9"
-            android:textStyle="bold"
             android:layout_margin="3dp"
-            android:textSize="15sp"/>
+            android:hint="Email"
+            android:textColor="#a9a9a9"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+
+
     </LinearLayout>
+
+    <View
+        android:layout_width="400dp"
+        android:layout_height="1dp"
+        android:layout_marginLeft="-390dp"
+        android:layout_marginTop="100dp"
+        android:background="@android:color/darker_gray" />
+
 
 </LinearLayout>

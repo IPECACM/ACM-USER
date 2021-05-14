@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-<item
-    android:id="@+id/mitem1"
-    android:title="Item 1"/>
+
 
     <item
         android:id="@+id/mitem2"
-        android:title="Item 2"/>
+        android:title="Notices" />
 
     <item
         android:id="@+id/mitem3"
-        android:title="Item 3"/>
+        android:title="Gallery" />
+
+
+    <item
+        android:id="@+id/mitem4"
+        android:title="ACM Team" />
+
+
+    <item
+        android:id="@+id/mitem5"
+        android:title="Student Login" />
+
 
 
 

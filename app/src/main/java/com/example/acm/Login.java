@@ -15,14 +15,16 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class Login extends AppCompatActivity {
 
     FirebaseAuth firebaseAuth;
     private EditText email;
     private EditText password;
-    private Button Login;
+    private Button Login,Logout;
     String Email,Password;
+    FirebaseUser firebaseUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +34,9 @@ public class Login extends AppCompatActivity {
         email=findViewById(R.id.email);
         password=findViewById(R.id.password);
         Login=findViewById(R.id.login);
-        firebaseAuth=FirebaseAuth.getInstance();
+         firebaseAuth=FirebaseAuth.getInstance();
+
+
 
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,8 +65,8 @@ public class Login extends AppCompatActivity {
                 if(task.isSuccessful())
                 {
                     Toast.makeText(Login.this,"Logged In Successfully",Toast.LENGTH_SHORT).show();
-                    email.setText(" ");
-                    password.setText(" ");
+                    email.setText("");
+                    password.setText("");
                     Intent i= new Intent(Login.this,DisplayTask.class);
                     startActivity(i);
 
