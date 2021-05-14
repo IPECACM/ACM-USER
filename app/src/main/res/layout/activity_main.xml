@@ -71,22 +71,24 @@
             <!--            app:layout_constraintTop_toBottomOf="@+id/textView2"-->
             <!--            app:layout_constraintVertical_bias="1.0">-->
 
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="450dp"
-                android:text="ACM, the Association for Computing Machinery founded in New York on September 15, 1947, is the world’s largest educational and scientific society connecting and convening the researchers, educators and professionals to apportion resources, inspire discourse and scrutinize and address the field’s challenges.
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="450dp"
+                    android:text="ACM, the Association for Computing Machinery founded in New York on September 15, 1947, is the world’s largest educational and scientific society connecting and convening the researchers, educators and professionals to apportion resources, inspire discourse and scrutinize and address the field’s challenges.
 
 The IPEC ACM Student Chapter is an organized representative association that upholds the right of students, develop high standards of honour and civic responsibility and promote cooperation between the student body, faculty, and administration.
 The Chapter is chartered by ACM and operated exclusively for educational and scientific purposes to promote an increased knowledge of and greater interest in the contributions of science, design, development, languages, management and applications of modern computing,improvement of the learning and working environments of students in computing and a means of communication between the persons having interest in computing.
 "
-                android:textAlignment="center"
-                android:textSize="20dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView"
-                app:layout_constraintVertical_bias="0.0" />
+                    android:textAlignment="center"
+                    android:textSize="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView"
+                    app:layout_constraintVertical_bias="0.0" />
+
 
 
             <ImageView
@@ -120,6 +122,8 @@ The Chapter is chartered by ACM and operated exclusively for educational and sci
                 app:layout_constraintEnd_toStartOf="@+id/insta"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

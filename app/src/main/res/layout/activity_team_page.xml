@@ -4,70 +4,103 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".teamPage"
-    android:orientation="horizontal">
+    android:orientation="vertical">
 
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/faculty"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp">
-
-        <TextView
-            android:layout_width="184dp"
-            android:layout_height="52dp"
-            android:layout_marginLeft="120dp"
-            android:layout_marginTop="20dp"
-            android:text="Faculty"
-            android:textAlignment="center"
-            android:textSize="40dp" />
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/prime"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_marginLeft="-412dp"
-        android:layout_marginTop="250dp">
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Prime Core"
-            android:layout_marginLeft="70dp"
-            android:layout_marginTop="30dp"
-            android:textAlignment="center"
-            android:textSize="60dp" />
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/core"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_marginLeft="-412dp"
-        android:layout_marginTop="400dp">
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" Core Members"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="30dp"
-            android:textAlignment="center"
-            android:textSize="50dp" />
-    </androidx.cardview.widget.CardView>
 
     <TextView
-        android:layout_width="114dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="-270dp"
         android:layout_marginTop="20dp"
+        android:background="@drawable/glow"
+        android:paddingLeft="90dp"
+        android:layout_marginLeft="50dp"
+        android:paddingTop="20dp"
         android:text="ACM TEAM"
-        android:textSize="20dp" />
+        android:textAllCaps="true"
+        android:textColor="@color/cornflower_blue"
+        android:textSize="20dp"
+        android:textStyle="bold|italic" />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/faculty"
+        android:layout_width="150dp"
+        android:layout_marginLeft="100dp"
+        app:cardCornerRadius="75dp"
+        app:elevation="50dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="50dp">
 
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="150dp"
+            android:elevation="10dp"
+            android:paddingLeft="25dp"
+            android:paddingTop="20dp"
+            android:text="Faculties"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="bold|italic" />
+        <ImageView
+            android:layout_width="130dp"
+            android:paddingLeft="35dp"
+            android:paddingTop="20dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/teacher"></ImageView>
 
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/prime"
+        android:layout_width="150dp"
+        android:layout_marginLeft="100dp"
+        app:cardCornerRadius="75dp"
+        app:elevation="50dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="50dp">
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="150dp"
+            android:paddingTop="25dp"
+            android:paddingLeft="15dp"
+            android:text="Prime Core"
+            android:textStyle="bold|italic"
+            android:elevation="10dp"
+            android:textColor="@color/black"
+            android:textSize="25dp" />
+        <ImageView
+            android:layout_width="150dp"
+            android:paddingLeft="15dp"
+            android:paddingTop="20dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/team"></ImageView>
+
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/core"
+        android:layout_width="150dp"
+        android:layout_marginLeft="100dp"
+        app:cardCornerRadius="75dp"
+        app:elevation="50dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="50dp">
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="150dp"
+            android:paddingTop="20dp"
+            android:paddingLeft="45dp"
+            android:text=" Core"
+            android:textStyle="bold|italic"
+            android:elevation="10dp"
+            android:textColor="@color/black"
+            android:textSize="25dp" />
+        <ImageView
+            android:layout_width="150dp"
+            android:paddingLeft="15dp"
+            android:paddingTop="20dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/team2"></ImageView>
+
+    </androidx.cardview.widget.CardView>
 </LinearLayout>
