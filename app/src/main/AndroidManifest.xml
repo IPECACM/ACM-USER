@@ -12,7 +12,8 @@
         android:roundIcon="@drawable/acm"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Check"></activity>
+        <activity android:name=".fullscreenactivity"></activity>
+        <activity android:name=".Check" />
         <activity android:name=".DisplayTask" />
         <activity android:name=".sig_selection" />
         <activity android:name=".ChooseSig" />

@@ -10,7 +10,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:nestedScrollingEnabled="true">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -24,6 +25,7 @@
                 android:layout_height="295dp"
                 android:autoStart="true"
                 android:flipInterval="2000"
+                android:elevation="8dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -31,7 +33,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
-
+                    android:elevation="8dp"
                     android:background="@drawable/ipec">
 
 
@@ -39,6 +41,7 @@
 
                 <ImageView
                     android:layout_width="match_parent"
+                    android:elevation="8dp"
                     android:layout_height="250dp"
                     android:background="@drawable/acm">
 
