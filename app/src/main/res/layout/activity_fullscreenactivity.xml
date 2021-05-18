@@ -7,23 +7,17 @@
     tools:context=".fullscreenactivity">
 
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card"
-        android:layout_width="560dp"
-        android:layout_height="648dp"
-        app:cardCornerRadius="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+
 
 
         <ImageView
             android:id="@+id/fullscreen"
-            android:layout_width="550dp"
-            android:layout_height="633dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:src="@drawable/roundimage"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -31,6 +25,6 @@
             app:layout_constraintTop_toTopOf="parent">
 
         </ImageView>
-    </androidx.cardview.widget.CardView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
