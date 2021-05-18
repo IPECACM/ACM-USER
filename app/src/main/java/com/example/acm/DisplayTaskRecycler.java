@@ -26,8 +26,11 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 import java.util.List;
@@ -68,25 +71,53 @@ public class DisplayTaskRecycler extends FirebaseRecyclerAdapter<choicemodel,Dis
 
         holder.Name.setText(UploadInfo.getName());
         holder.Submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                                             @Override
+                                             public void onClick(View v) {
+                                                 final DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Student Tasks");
+                                                 DatabaseReference sref = FirebaseDatabase.getInstance().getReference("Student Details");
+                                                 sref.addListenerForSingleValueEvent(new ValueEventListener() {
+                                                     @Override
+                                                     public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                                         for (DataSnapshot s : snapshot.getChildren()) {
+                                                             Log.i("jjhjkijgkijgf", s.child("Name").getValue().toString());
+                                                             HashMap<String, Object> studentMap = new HashMap<>();
+                                                             studentMap.put("isDone", "Under Review");
+                                                             studentMap.put("Name", s.child("Name").getValue().toString());
+                                                             //Log.i("fjkrfkrdfkcfc",m.getBranch());
+                                                             ref.child(UploadInfo.getSIG()).child(UploadInfo.getName()).child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(studentMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                                 @Override
+                                                                 public void onComplete(@NonNull Task<Void> task) {
+                                                                     //  Toast.makeText(context, "Done", Toast.LENGTH_SHORT).show();
+                                                                 }
+                                                             });
+                                                         }
+                                                     }
 
-                final DatabaseReference ref= FirebaseDatabase.getInstance().getReference("Student Details").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
-                HashMap<String, Object> studentMap = new HashMap<>();
-                studentMap.put("isDone","Under Review");
+                                                     @Override
+                                                     public void onCancelled(@NonNull DatabaseError error) {
 
-                ref.child("Tasks").child(UploadInfo.getSIG()).child(UploadInfo.getName()).setValue(studentMap).addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
+                                                     }
+                                                 });
+                                             }
+                                         });
+//
 
-                      //  Toast.makeText(context, "gvghkmjh", Toast.LENGTH_SHORT).show();
-                        //Log.i("djklewjdkd",ref.child("Tasks").child(UploadInfo.getSIG()).child(UploadInfo.getName()).child("isDone").toString());
-                    }
-                });
+//                final DatabaseReference ref= FirebaseDatabase.getInstance().getReference("Student Details").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+//                HashMap<String, Object> studentMap = new HashMap<>();
+//                studentMap.put("isDone","Under Review");
+//
+//                ref.child("Tasks").child(UploadInfo.getSIG()).child(UploadInfo.getName()).setValue(studentMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<Void> task) {
+//
+//                      //  Toast.makeText(context, "gvghkmjh", Toast.LENGTH_SHORT).show();
+//                        //Log.i("djklewjdkd",ref.child("Tasks").child(UploadInfo.getSIG()).child(UploadInfo.getName()).child("isDone").toString());
+//                    }
+//                });
 
 
-            }
-        });
+      //      }
+
         holder.Download.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
