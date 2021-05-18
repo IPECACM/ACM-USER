@@ -1,12 +1,16 @@
 package com.example.acm;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
@@ -44,6 +48,16 @@ public class galleryAdapter extends RecyclerView.Adapter<galleryAdapter.ViewHold
 
 
         Glide.with(context).load(UploadInfo.getImage()).into(holder.image);
+        holder.image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(v.getContext(),fullscreenactivity.class);
+                i.putExtra("Image",UploadInfo.getImage());
+               i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+               context.startActivity(i);
+
+            }
+        });
     }
 
     @Override
