@@ -8,4 +8,8 @@
         <item name="colorAccent">#ffffff</item>
     </style>
 
+    <style name="splash_screen" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@color/white</item>
+        </style>
+
 </resources>

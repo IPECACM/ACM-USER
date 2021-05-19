@@ -12,7 +12,8 @@
         android:roundIcon="@drawable/acm"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".fullscreenactivity"></activity>
+       <activity android:name=".MainActivity"></activity>
+        <activity android:name=".fullscreenactivity" />
         <activity android:name=".Check" />
         <activity android:name=".DisplayTask" />
         <activity android:name=".sig_selection" />
@@ -29,7 +30,7 @@
         <activity android:name=".Notices" />
         <activity android:name=".AddFaculty" />
         <activity android:name=".Test" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".animation">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

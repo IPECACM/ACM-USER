@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
+    <!--<TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="24dp"
@@ -18,15 +18,15 @@
         android:text="Student Login"
         android:textColor="@color/black"
         android:textSize="45dp"
-        android:textStyle="bold|italic" />
+        android:textStyle="bold|italic" />-->
 
     <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="150dp"
         app:cardCornerRadius="40dp"
         app:cardElevation="50dp"
-        android:layout_height="wrap_content">
+        android:layout_height="300dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -34,10 +34,10 @@
 
     <EditText
         android:id="@+id/email"
-        android:layout_width="300dp"
+        android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="24dp"
         android:hint="@string/prompt_email"
         android:inputType="textEmailAddress"
@@ -47,10 +47,11 @@
 
         <EditText
             android:id="@+id/password"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
             android:layout_height="50dp"
             android:layout_marginStart="20dp"
             android:hint="@string/prompt_password"
+            android:layout_marginTop="20dp"
             android:imeActionLabel="@string/action_sign_in_short"
             android:imeOptions="actionDone"
             android:inputType="textPassword"
@@ -66,7 +67,7 @@
                 android:backgroundTint="@color/blue"
                 android:layout_height="50dp"
                 android:layout_marginBottom="50dp"
-                android:layout_marginStart="70dp"
+                android:layout_marginStart="45dp"
                 android:elevation="20dp"
                 android:text="@string/action_sign_in"
                 android:textColor="@color/white"
