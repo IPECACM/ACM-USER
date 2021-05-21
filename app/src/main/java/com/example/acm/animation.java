@@ -22,7 +22,7 @@ public class animation extends AppCompatActivity {
 
             public void run() {
 
-                Intent intent = new Intent(animation.this , MainActivity.class);
+                Intent intent = new Intent(animation.this , MainActivity2.class);
 
                 startActivity(intent);
 

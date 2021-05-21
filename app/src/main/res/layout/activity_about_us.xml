@@ -41,6 +41,7 @@
 The IPEC ACM Student Chapter is an organized representative association that upholds the right of students, develop high standards of honour and civic responsibility and promote cooperation between the student body, faculty, and administration.
 The Chapter is chartered by ACM and operated exclusively for educational and scientific purposes to promote an increased knowledge of and greater interest in the contributions of science, design, development, languages, management and applications of modern computing,improvement of the learning and working environments of students in computing and a means of communication between the persons having interest in computing.
 "
+            
             android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="20dp"
