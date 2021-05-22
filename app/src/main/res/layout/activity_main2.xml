@@ -298,10 +298,37 @@
         app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/root"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent">
 
 
-      <!--  <com.google.android.material.tabs.TabLayout
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/insta"
+            android:layout_width="43dp"
+            android:layout_height="38dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/innew" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/fb"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:src="@drawable/fb1"
+            android:layout_marginTop="18dp"
+            android:layout_marginLeft="140dp"
+            />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/map"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:src="@drawable/direction"
+            android:layout_marginTop="18dp"
+            android:layout_marginLeft="280dp"
+            />
+
+
+        <!--  <com.google.android.material.tabs.TabLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/background_color_50">

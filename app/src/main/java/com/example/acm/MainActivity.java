@@ -3,6 +3,7 @@ package com.example.acm;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
@@ -22,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView map;
     ImageView insta;
     ImageView fb;
-
+public CardView card;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         map = (ImageView) findViewById(R.id.map);
         insta=findViewById(R.id.insta);
         fb=findViewById(R.id.fb);
+        card=findViewById(R.id.card);
 
         map.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,8 +44,8 @@ public class MainActivity extends AppCompatActivity {
         });
         insta.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                gotourl("https://instagram.com/ipec_acm_chapter?igshid=5r007wn3i8rd");
+            public void onClick(View v) { ;
+               gotourl("https://instagram.com/ipec_acm_chapter?igshid=5r007wn3i8rd");
             }
         });
         fb.setOnClickListener(new View.OnClickListener() {
