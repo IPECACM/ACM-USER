@@ -316,7 +316,7 @@
             android:layout_height="40dp"
             android:src="@drawable/fb1"
             android:layout_marginTop="18dp"
-            android:layout_marginLeft="140dp"
+            android:layout_marginLeft="150dp"
             />
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/map"

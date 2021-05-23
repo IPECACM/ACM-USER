@@ -12,6 +12,8 @@
 
     <color name="background_color_50">#B3FFFFFF</color>
 
+    <color name="notice">#ECA275</color>
+
     <color name="yellow">#FFFF00</color>
 
     <color name="snow">#FFFAFA</color>

@@ -30,7 +30,8 @@
         <activity android:name=".Notices" />
         <activity android:name=".AddFaculty" />
         <activity android:name=".Test" />
-        <activity android:name=".animation">
+        <activity android:name=".animation"
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
