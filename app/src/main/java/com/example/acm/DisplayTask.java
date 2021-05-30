@@ -2,6 +2,7 @@ package com.example.acm;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -100,6 +101,8 @@ public class DisplayTask extends AppCompatActivity {
 
             }
         });
+
+
 
 
         OData.addValueEventListener(new ValueEventListener() {

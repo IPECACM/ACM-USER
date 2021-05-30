@@ -14,7 +14,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
             android:backgroundTint="@color/sky_blue"
-            app:cardCornerRadius="44dp"
+            app:cardCornerRadius="20dp"
             android:layout_marginLeft="15dp"
             android:elevation="8dp">
         <TextView
@@ -33,7 +33,7 @@
             android:layout_width="40dp"
             android:layout_height="38dp"
             android:elevation="8dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="25dp"
             android:background="@drawable/general_img_background"
             android:layout_marginLeft="310dp"
             android:layout_marginRight="20dp"

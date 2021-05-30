@@ -49,7 +49,7 @@ public class DisplayTaskRecycler extends FirebaseRecyclerAdapter<choicemodel,Dis
 
 
 
-    public DisplayTaskRecycler(FirebaseRecyclerOptions<choicemodel> options, Test displayTask) {
+    public DisplayTaskRecycler(FirebaseRecyclerOptions<choicemodel> options, Context context) {
 
         super(options);
         this.context = context;
@@ -73,6 +73,7 @@ public class DisplayTaskRecycler extends FirebaseRecyclerAdapter<choicemodel,Dis
         holder.Submit.setOnClickListener(new View.OnClickListener() {
                                              @Override
                                              public void onClick(View v) {
+                                                 holder.Submit.setEnabled(false);
                                                  final DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Student Tasks");
                                                  DatabaseReference sref = FirebaseDatabase.getInstance().getReference("Student Details");
                                                  sref.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -87,7 +88,7 @@ public class DisplayTaskRecycler extends FirebaseRecyclerAdapter<choicemodel,Dis
                                                              ref.child(UploadInfo.getSIG()).child(UploadInfo.getName()).child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(studentMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                                                                  @Override
                                                                  public void onComplete(@NonNull Task<Void> task) {
-                                                                     //  Toast.makeText(context, "Done", Toast.LENGTH_SHORT).show();
+                                                                       Toast.makeText(context, "Task Submitted Successfully", Toast.LENGTH_SHORT).show();
                                                                  }
                                                              });
                                                          }
@@ -123,9 +124,9 @@ public class DisplayTaskRecycler extends FirebaseRecyclerAdapter<choicemodel,Dis
             public void onClick(View view) {
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(UploadInfo.getPdfUrl()));
-                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK |Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );
                 context.startActivity(i);
-                Toast.makeText(context,"Downloaded",Toast.LENGTH_SHORT).show();
+               // Toast.makeText(context,"Downloaded",Toast.LENGTH_SHORT).show();
             }
         });
 
