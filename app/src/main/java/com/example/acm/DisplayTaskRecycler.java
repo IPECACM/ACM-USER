@@ -89,6 +89,10 @@ public class DisplayTaskRecycler extends FirebaseRecyclerAdapter<choicemodel,Dis
                                                                  @Override
                                                                  public void onComplete(@NonNull Task<Void> task) {
                                                                        Toast.makeText(context, "Task Submitted Successfully", Toast.LENGTH_SHORT).show();
+
+
+
+
                                                                  }
                                                              });
                                                          }
@@ -133,6 +137,7 @@ public class DisplayTaskRecycler extends FirebaseRecyclerAdapter<choicemodel,Dis
 
 
 
+
     }
 
 
@@ -144,6 +149,7 @@ public class DisplayTaskRecycler extends FirebaseRecyclerAdapter<choicemodel,Dis
 
     class ViewHolder extends RecyclerView.ViewHolder {
 
+        public TextView Status;
 
         public TextView Name;
        // public TextView Choice2;
@@ -157,6 +163,7 @@ public class DisplayTaskRecycler extends FirebaseRecyclerAdapter<choicemodel,Dis
 
             Name = (TextView) itemView.findViewById(R.id.name);
             Layout=itemView.findViewById(R.id.layout);
+            Status=itemView.findViewById(R.id.status);
             Download=itemView.findViewById(R.id.download);
             Submit=itemView.findViewById(R.id.submitted);
 
