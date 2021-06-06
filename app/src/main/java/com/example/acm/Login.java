@@ -30,7 +30,6 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
         email=findViewById(R.id.email);
         password=findViewById(R.id.password);
         Login=findViewById(R.id.login);
@@ -67,7 +66,7 @@ public class Login extends AppCompatActivity {
                     Toast.makeText(Login.this,"Logged In Successfully",Toast.LENGTH_SHORT).show();
                     email.setText("");
                     password.setText("");
-                    Intent i= new Intent(Login.this,DisplayTask.class);
+                    Intent i= new Intent(Login.this,student_dashbord.class);
                     startActivity(i);
 
                 }

@@ -36,7 +36,7 @@ public class DisplayTask extends AppCompatActivity {
     ListView listView;
     FirebaseUser firebaseUser;
     ArrayAdapter<String> adapter;
-    private Button Choose,Logout;
+    private Button Choose,Logout,button2;
 //    private TextView choice0;
 //    private TextView choice1;
 //    private TextView choice2;
@@ -46,12 +46,14 @@ public class DisplayTask extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_task);
 
+
         listView =findViewById(R.id.listview);
 //        recyclerView = (RecyclerView) findViewById(R.id.rv9);
 //        recyclerView.setHasFixedSize(true);
 //        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         list=new ArrayList<>();
         Choose=findViewById(R.id.choose);
+        button2=findViewById(R.id.button2);
         FAuth = FirebaseAuth.getInstance();
         Logout=findViewById(R.id.logout);
         FAuth=FirebaseAuth.getInstance();
@@ -70,6 +72,15 @@ public class DisplayTask extends AppCompatActivity {
 //            }
 //        });
 
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(DisplayTask.this,student_dashbord.class);
+                startActivity(i);
+
+            }
+        });
+
         final DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Student Details").child(FAuth.getCurrentUser().getUid());
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -87,6 +98,7 @@ public class DisplayTask extends AppCompatActivity {
                     Choose.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
+
                             Intent i= new Intent(DisplayTask.this,sig_selection.class);
                             startActivity(i);
                         }
@@ -140,17 +152,17 @@ public class DisplayTask extends AppCompatActivity {
             }
         });
 
-        Logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                Intent i= new Intent(DisplayTask.this,Login.class);
-                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(i);
-
-
-            }
-        });
+//        Logout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                FirebaseAuth.getInstance().signOut();
+//                Intent i= new Intent(DisplayTask.this,Login.class);
+//                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//                startActivity(i);
+//
+//
+//            }
+       // });
     }
 }

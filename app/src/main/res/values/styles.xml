@@ -6,10 +6,16 @@
         <item name="colorPrimary">#000080</item>
         <item name="colorPrimaryDark">#000080</item>
         <item name="colorAccent">#ffffff</item>
+        <item name="android:windowAnimationStyle">@style/dailogue</item>
     </style>
 
     <style name="splash_screen" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:statusBarColor">@color/white</item>
         </style>
+    
+    <style name="dailogue">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowEnterAnimation">@android:anim/fade_out</item>
+    </style>
 
 </resources>
