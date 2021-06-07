@@ -55,7 +55,7 @@ public class DisplayTask extends AppCompatActivity {
         Choose=findViewById(R.id.choose);
         button2=findViewById(R.id.button2);
         FAuth = FirebaseAuth.getInstance();
-        Logout=findViewById(R.id.logout);
+      //  Logout=findViewById(R.id.logout);
         FAuth=FirebaseAuth.getInstance();
         firebaseUser=FAuth.getCurrentUser();
 

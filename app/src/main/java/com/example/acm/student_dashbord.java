@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.Layout;
@@ -34,6 +35,7 @@ public class student_dashbord extends AppCompatActivity {
 
     FirebaseAuth fb;
     Dialog dialogue;
+    CardView card;
 
 
     @Override
@@ -53,6 +55,15 @@ public class student_dashbord extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_dashbord);
         fb = FirebaseAuth.getInstance();
+        card=findViewById(R.id.card_4);
+
+        card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(student_dashbord.this,DisplayTask.class);
+                startActivity(i);
+            }
+        });
 
 
 
