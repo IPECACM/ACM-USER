@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.Layout;
@@ -27,26 +28,20 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import org.jetbrains.annotations.NotNull;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class student_dashbord extends AppCompatActivity {
 
     FirebaseAuth fb;
     Dialog dialogue;
+    private CircleImageView profileImageView;
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater=getMenuInflater();
-         inflater.inflate(R.menu.student_setting,menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull @NotNull MenuItem item) {
-        return super.onOptionsItemSelected(item);
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +49,7 @@ public class student_dashbord extends AppCompatActivity {
         setContentView(R.layout.activity_student_dashbord);
         fb = FirebaseAuth.getInstance();
 
-
+       // profileImageView = findViewById(R.id.profile_image);
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Student Details").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
         reference.addValueEventListener(new ValueEventListener() {
@@ -63,6 +58,15 @@ public class student_dashbord extends AppCompatActivity {
 
                 Log.d("ADebug", "Value: " + (datasnapshot.child("Name").getValue().toString()));
                 getSupportActionBar().setTitle("Welcome to your dashbord "+datasnapshot.child("Name").getValue().toString());
+
+//                if (datasnapshot.hasChild("image"))
+//                {
+//                    String image = datasnapshot.child("image").getValue().toString();
+//                    Picasso.get().load(image).into(profileImageView);
+//                }
+//                else {
+//                    Toast.makeText(student_dashbord.this, "Please Upload a profile Pic", Toast.LENGTH_SHORT).show();
+//                }
             }
             @Override
             public void onCancelled(@NotNull DatabaseError error) {
@@ -115,7 +119,7 @@ public class student_dashbord extends AppCompatActivity {
                 reference.child("Email").setValue(email);
                 reference.child("Password").setValue(password);
                 dialogue.dismiss();
-                Toast.makeText(student_dashbord.this,"Info updated",Toast.LENGTH_SHORT).show();
+                Toast.makeText(student_dashbord.this,"Information updated",Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -126,8 +130,15 @@ public class student_dashbord extends AppCompatActivity {
             }
         });
 
+        CardView photo=findViewById(R.id.edit_photo);
+        photo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-
-
+                Intent i= new Intent(student_dashbord.this,profile_picture.class);
+                startActivity(i);
+                
+            }
+        });
     }
-}
+    }

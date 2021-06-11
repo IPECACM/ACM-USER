@@ -129,9 +129,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/lato_black"
-                        android:text="ACM Member Login"
+                        android:text="ACM Member's Login"
                         android:textColor="#7159CF"
-                        android:textSize="16sp" />
+                        android:textSize="12sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
         </LinearLayout>

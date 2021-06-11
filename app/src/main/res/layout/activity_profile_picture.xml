@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<RelativeLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_height="150dp"
+        android:layout_width="150dp"
+        app:civ_border_width="2dp"
+        app:civ_border_color="@color/black"
+        android:src="@drawable/profile"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/profile_image"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/change_profile_btn"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:text="Change Profile"
+        android:layout_below="@+id/profile_image"/>
+
+
+
+    -<LinearLayout
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_below="@+id/change_profile_btn"
+    android:layout_margin="16dp"
+    android:weightSum="2"
+    android:orientation="horizontal">
+
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:id="@+id/btnClose"
+        android:textStyle="bold"
+        android:text="Close"
+        android:textColor="@color/black"
+        android:layout_marginRight="6dp"
+        android:background="@drawable/glow"
+        android:fontFamily="@font/lato_black"
+        android:layout_weight="1"/>
+
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:id="@+id/btnSave"
+        android:textStyle="bold"
+        android:text="Save"
+        android:textColor="@color/black"
+        android:background="@drawable/glow"
+        android:fontFamily="@font/lato_black"
+        android:layout_weight="1"
+        android:layout_marginLeft="6dp"/>
+
+</LinearLayout>
+
+</RelativeLayout>
