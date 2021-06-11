@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.Layout;
@@ -126,6 +127,15 @@ public class student_dashbord extends AppCompatActivity {
             }
         });
 
+        CardView profile_photo=findViewById(R.id.profile_photo);
+        profile_photo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(student_dashbord.this , profile_picture.class);
+
+                startActivity(intent);
+            }
+        });
 
 
 
