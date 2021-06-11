@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".login_entry"
-    android:background="@color/yellow">
+    android:background="@color/sky_blue">
 
 
     <de.hdodenhof.circleimageview.CircleImageView
