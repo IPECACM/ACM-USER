@@ -36,12 +36,12 @@ public class student_dashbord extends AppCompatActivity {
     Dialog dialogue;
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater=getMenuInflater();
-         inflater.inflate(R.menu.student_setting,menu);
-        return true;
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        MenuInflater inflater=getMenuInflater();
+//         inflater.inflate(R.menu.student_setting,menu);
+//        return true;
+//    }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull @NotNull MenuItem item) {
