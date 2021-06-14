@@ -3,7 +3,6 @@ package com.example.acm;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -31,12 +30,15 @@ import com.google.firebase.database.ValueEventListener;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Objects;
+
 public class student_dashbord extends AppCompatActivity {
 
     FirebaseAuth fb;
     Dialog dialogue;
+    Button button,log;
 
-
+//
 //    @Override
 //    public boolean onCreateOptionsMenu(Menu menu) {
 //        MenuInflater inflater=getMenuInflater();
@@ -54,8 +56,6 @@ public class student_dashbord extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_dashbord);
         fb = FirebaseAuth.getInstance();
-
-
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Student Details").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
         reference.addValueEventListener(new ValueEventListener() {
@@ -76,11 +76,69 @@ public class student_dashbord extends AppCompatActivity {
         dialogue.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
         dialogue.getWindow().getAttributes().windowAnimations=R.style.dailogue;
         CardView edit_profile=findViewById(R.id.edit_profile);
+        CardView sig=findViewById(R.id.card_4);
+         button= findViewById(R.id.butonform);
         EditText edit_phone=dialogue.findViewById(R.id.edit_phone);
         EditText edit_email=dialogue.findViewById(R.id.edit_email);
         EditText edit_password=dialogue.findViewById(R.id.edit_password);
         Button update=dialogue.findViewById(R.id.update);
         Button cancel=dialogue.findViewById(R.id.cancel);
+        log=findViewById(R.id.logout);
+
+        log.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fb.signOut();
+                Intent i= new Intent(student_dashbord.this,Login.class);
+//                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(i);
+            }
+        });
+
+        sig.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(student_dashbord.this,DisplayTask.class);
+                startActivity(i);
+            }
+        });
+
+        final DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Student Details").child(fb.getCurrentUser().getUid());
+        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                String status = Objects.requireNonNull(dataSnapshot.child("hasChoosen").getValue()).toString();
+                if(status.equals("false"))
+                {
+                    button.setEnabled(false);
+
+
+                }
+                else {
+                    if(status.equals("true"))
+
+                        button.setEnabled(true);
+                    button.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+
+                            Intent i= new Intent(student_dashbord.this,sig_selection.class);
+                            startActivity(i);
+                        }
+                    });
+
+
+                }
+
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
         edit_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

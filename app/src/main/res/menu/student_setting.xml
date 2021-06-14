@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item android:id="@+id/CP"
-        app:showAsAction="never"
-        android:title="Change Password"></item>
-    <item android:id="@+id/CPN"
-        app:showAsAction="never"
-        android:title="Change phone number"></item>
+    <item android:id="@+id/logout"
+        android:title="Logout">
+
+    </item>
+
 </menu>

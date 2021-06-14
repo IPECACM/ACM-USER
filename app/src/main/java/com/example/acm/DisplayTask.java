@@ -58,7 +58,6 @@ public class DisplayTask extends AppCompatActivity {
       //  Logout=findViewById(R.id.logout);
         FAuth=FirebaseAuth.getInstance();
         firebaseUser=FAuth.getCurrentUser();
-
         OData = FirebaseDatabase.getInstance().getReference().child("Student Details");
 
 
@@ -94,6 +93,7 @@ public class DisplayTask extends AppCompatActivity {
 
                 }
                 else {
+
                     Choose.setEnabled(true);
                     Choose.setOnClickListener(new View.OnClickListener() {
                         @Override

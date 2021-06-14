@@ -15,7 +15,7 @@ public class Home extends Application {
        FirebaseUser firebaseUser=FAuth.getCurrentUser();
        if(firebaseUser!=null)
        {
-Intent i= new Intent(Home.this,DisplayTask.class);
+Intent i= new Intent(Home.this,student_dashbord.class);
            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 startActivity(i);
        }

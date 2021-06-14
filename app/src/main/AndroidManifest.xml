@@ -7,7 +7,6 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
-        android:name=".Home"
         android:allowBackup="true"
         android:icon="@drawable/acm"
         android:label="IPEC ACM"
@@ -20,6 +19,8 @@
         <activity android:name=".profile_picture" />
         <activity android:name=".student_dashbord" />
         <activity android:name=".MainActivity2" />
+        <activity android:name=".MainActivity" />
+
         <activity android:name=".fullscreenactivity" />
         <activity android:name=".Check" />
         <activity android:name=".DisplayTask" />

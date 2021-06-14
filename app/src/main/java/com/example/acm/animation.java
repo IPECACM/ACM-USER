@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class animation extends AppCompatActivity {
 
     @Override
@@ -22,9 +24,14 @@ public class animation extends AppCompatActivity {
 
             public void run() {
 
-                Intent intent = new Intent(animation.this , MainActivity2.class);
 
-                startActivity(intent);
+                if(FirebaseAuth.getInstance().getCurrentUser() == null){
+                    startActivity(new Intent(animation.this, MainActivity2.class));
+                }else {
+                    startActivity(new Intent(animation.this, student_dashbord.class));
+                }
+
+                finish();
 
             }
 
