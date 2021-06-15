@@ -73,7 +73,7 @@
             android:paddingLeft="15dp"
             android:paddingTop="20dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/team"></ImageView>
+            android:src="@drawable/team2"></ImageView>
 
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView

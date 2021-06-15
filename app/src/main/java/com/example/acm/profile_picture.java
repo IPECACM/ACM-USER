@@ -78,7 +78,7 @@ public class profile_picture extends AppCompatActivity {
             }
         });
 
-        profileChangeBtn.setOnClickListener(new View.OnClickListener() {
+        profileImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 CropImage.activity().setAspectRatio(1,1).start(profile_picture.this);

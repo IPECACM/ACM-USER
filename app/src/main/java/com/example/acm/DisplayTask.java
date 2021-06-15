@@ -52,8 +52,8 @@ public class DisplayTask extends AppCompatActivity {
 //        recyclerView.setHasFixedSize(true);
 //        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         list=new ArrayList<>();
-        Choose=findViewById(R.id.choose);
-        button2=findViewById(R.id.button2);
+        //Choose=findViewById(R.id.choose);
+        //button2=findViewById(R.id.button2);
         FAuth = FirebaseAuth.getInstance();
       //  Logout=findViewById(R.id.logout);
         FAuth=FirebaseAuth.getInstance();
@@ -71,48 +71,48 @@ public class DisplayTask extends AppCompatActivity {
 //            }
 //        });
 
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i= new Intent(DisplayTask.this,student_dashbord.class);
-                startActivity(i);
+//        button2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent i= new Intent(DisplayTask.this,student_dashbord.class);
+//                startActivity(i);
+//
+//            }
+//        });
 
-            }
-        });
-
-        final DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Student Details").child(FAuth.getCurrentUser().getUid());
-        ref.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                String status = Objects.requireNonNull(dataSnapshot.child("hasChoosen").getValue()).toString();
-                if(status.equals("false"))
-                {
-                    Choose.setEnabled(false);
-
-
-                }
-                else {
-
-                    Choose.setEnabled(true);
-                    Choose.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-
-                            Intent i= new Intent(DisplayTask.this,sig_selection.class);
-                            startActivity(i);
-                        }
-                    });
-
-
-                }
-
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
+       // final DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Student Details").child(FAuth.getCurrentUser().getUid());
+//        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//
+//                String status = Objects.requireNonNull(dataSnapshot.child("hasChoosen").getValue()).toString();
+//                if(status.equals("false"))
+//                {
+//                    Choose.setEnabled(false);
+//
+//
+//                }
+//                else {
+//
+//                    Choose.setEnabled(true);
+//                    Choose.setOnClickListener(new View.OnClickListener() {
+//                        @Override
+//                        public void onClick(View view) {
+//
+//                            Intent i= new Intent(DisplayTask.this,sig_selection.class);
+//                            startActivity(i);
+//                        }
+//                    });
+//
+//
+//                }
+//
+//            }
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
 
 
 

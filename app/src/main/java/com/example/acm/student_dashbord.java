@@ -36,18 +36,26 @@ public class student_dashbord extends AppCompatActivity {
 
     FirebaseAuth fb;
     Dialog dialogue;
-    Button button,log;
+    CardView button;
+    //Button log;
 
-//
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        MenuInflater inflater=getMenuInflater();
-//         inflater.inflate(R.menu.student_setting,menu);
-//        return true;
-//    }
 
     @Override
-    public boolean onOptionsItemSelected(@NonNull @NotNull MenuItem item) {
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater=getMenuInflater();
+         inflater.inflate(R.menu.student_setting,menu);
+        return true;
+  }
+
+    @Override
+    public boolean onOptionsItemSelected(@NotNull MenuItem item) {
+        switch(item.getItemId()){
+            case R.id.logout:
+                fb.signOut();
+                Intent i= new Intent(student_dashbord.this,MainActivity2.class);
+                startActivity(i);
+                return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -77,24 +85,24 @@ public class student_dashbord extends AppCompatActivity {
         dialogue.getWindow().getAttributes().windowAnimations=R.style.dailogue;
         CardView edit_profile=findViewById(R.id.edit_profile);
         CardView sig=findViewById(R.id.card_4);
-         button= findViewById(R.id.butonform);
+        button= findViewById(R.id.butonform);
         EditText edit_phone=dialogue.findViewById(R.id.edit_phone);
         EditText edit_email=dialogue.findViewById(R.id.edit_email);
         EditText edit_password=dialogue.findViewById(R.id.edit_password);
         Button update=dialogue.findViewById(R.id.update);
         Button cancel=dialogue.findViewById(R.id.cancel);
-        log=findViewById(R.id.logout);
+        //log=findViewById(R.id.logout);
 
-        log.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                fb.signOut();
-                Intent i= new Intent(student_dashbord.this,Login.class);
-//                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-//                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(i);
-            }
-        });
+//        log.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                fb.signOut();
+//                Intent i= new Intent(student_dashbord.this,Login.class);
+////                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+////                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//                startActivity(i);
+//            }
+//        });
 
         sig.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,26 +120,25 @@ public class student_dashbord extends AppCompatActivity {
                 String status = Objects.requireNonNull(dataSnapshot.child("hasChoosen").getValue()).toString();
                 if(status.equals("false"))
                 {
-                    button.setEnabled(false);
-
-
+                   // button.setEnabled(false);
+                    button.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Toast.makeText(student_dashbord.this,"Registrations are Closed",Toast.LENGTH_SHORT).show();
+                        }
+                    });
                 }
                 else {
                     if(status.equals("true"))
-
-                        button.setEnabled(true);
+                       // button.setEnabled(true);
                     button.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-
                             Intent i= new Intent(student_dashbord.this,sig_selection.class);
                             startActivity(i);
                         }
                     });
-
-
                 }
-
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
@@ -152,7 +159,7 @@ public class student_dashbord extends AppCompatActivity {
                         //Log.d("ADebug", "Value: " + (datasnapshot.child("Phone").getValue().toString()));
                         edit_phone.setText(datasnapshot.child("Phone").getValue().toString());
                         edit_email.setText(datasnapshot.child("Email").getValue().toString());
-                       edit_password.setText(datasnapshot.child("Password").getValue().toString());
+                       edit_password.setText(datasnapshot.child("password").getValue().toString());
                         }
                     @Override
                     public void onCancelled(@NotNull DatabaseError error) {

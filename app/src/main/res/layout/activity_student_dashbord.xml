@@ -12,28 +12,20 @@
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="2"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="150dp"
         android:orientation="horizontal">
-
-
         <androidx.cardview.widget.CardView
             android:id="@+id/edit_profile"
-            android:layout_width="0dp"
+            android:layout_width="190dp"
             android:layout_height="150dp"
             android:layout_margin="5dp"
-            android:layout_weight="1"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
             app:cardBackgroundColor="@android:color/transparent"
             app:cardCornerRadius="30dp"
             app:cardElevation="0dp">
-
-
-
-
-
-
 
 
         <LinearLayout
@@ -65,10 +57,9 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card_4"
-            android:layout_width="0dp"
+            android:layout_width="190dp"
             android:layout_height="150dp"
             android:layout_margin="5dp"
-            android:layout_weight="1"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
@@ -109,18 +100,16 @@
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
-        android:layout_height="247dp"
-        android:layout_weight="2"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/profile_photo"
-            android:layout_width="0dp"
+            android:layout_width="200dp"
             android:layout_height="150dp"
             android:layout_margin="5dp"
-            android:layout_weight="1"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
@@ -141,9 +130,9 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_margin="20dp"
-                    android:background="@drawable/shopping_ing_background"
+                    android:background="@drawable/general_img_background"
                     android:padding="25dp"
-                    android:src="@drawable/ic_baseline_group_24"
+                    android:src="@drawable/ic_baseline_camera"
                     app:tint="#fff" />
 
 
@@ -151,28 +140,73 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/lato_black"
+                    android:layout_marginLeft="5dp"
+                    android:textSize="17dp"
                     android:text="Upload Profile Photo"
-                    android:textColor="#D84DCA"
-                    android:textSize="22sp" />
+                    android:textColor="@color/sky_blue"
+                     />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/butonform"
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:layout_margin="5dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="0dp">
+
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/background_color_50"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="20dp"
+                    android:background="@drawable/transport_ing_background"
+                    android:padding="25dp"
+                    android:src="@drawable/ic_baseline_library_books_24"
+                    app:tint="#fff" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato_black"
+                    android:layout_marginLeft="3dp"
+                    android:textSize="17dp"
+                    android:text="SIG Registrations"
+                    android:textColor="@color/dark_blue"
+                    />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <Button
-            android:id="@+id/butonform"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="form"
-            android:layout_marginTop="200dp"/>
 
-      <Button
-          android:id="@+id/logout"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="Logout"/>
 
 
 
     </LinearLayout>
+<!--    <Button-->
+<!--        android:id="@+id/butonform"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="form"-->
+<!--        android:layout_marginTop="200dp"/>-->
+
+<!--    <Button-->
+<!--        android:id="@+id/logout"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Logout"/>-->
 
 
 
