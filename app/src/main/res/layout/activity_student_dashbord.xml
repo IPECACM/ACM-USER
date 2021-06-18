@@ -167,6 +167,7 @@
                 android:layout_height="match_parent"
                 android:background="@color/background_color_50"
                 android:gravity="center"
+                android:layout_marginLeft="-20dp"
                 android:orientation="vertical">
 
                 <ImageView

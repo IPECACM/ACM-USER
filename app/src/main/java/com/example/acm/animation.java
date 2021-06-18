@@ -28,7 +28,7 @@ public class animation extends AppCompatActivity {
                 if(FirebaseAuth.getInstance().getCurrentUser() == null){
                     startActivity(new Intent(animation.this, MainActivity2.class));
                 }else {
-                    startActivity(new Intent(animation.this, student_dashbord.class));
+                    startActivity(new Intent(animation.this, MainActivity2.class));
                 }
 
                 finish();

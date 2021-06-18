@@ -3,6 +3,7 @@ package com.example.acm;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -209,16 +210,22 @@ public class DisplayTaskRecycler extends FirebaseRecyclerAdapter<choicemodel,Dis
 
                                                 Log.i("oiedocfgvfrgjccvfjc", data.child("isDone").getValue().toString());
 
-                                                if(data.child("isDone").getValue().toString().equals("Accept"))
-                                                {
-                                                    holder.Status.setTextColor(R.color._light_green);
-                                                }
-                                                else
-                                                    {
-                                                    holder.Status.setTextColor(R.color.orange_red);
-                                                }
+
                                                 holder.Status.setText(data.child("isDone").getValue().toString());
                                                 holder.Submit.setEnabled(false);
+
+                                                if(holder.Status.getText().toString().equals("Accept"))
+                                                {
+                                                    holder.Status.setTextColor(Color.parseColor("#0EA541"));
+                                                }
+                                                if(holder.Status.getText().toString().equals("Reject"))
+                                                {
+                                                    holder.Status.setTextColor(Color.parseColor("#FF2400"));
+                                                }
+                                                if(holder.Status.getText().toString().equals("Under Review"))
+                                                {
+                                                    holder.Status.setTextColor(Color.parseColor("#000080"));
+                                                }
                                             }
                                         }
                                     }
@@ -229,7 +236,10 @@ public class DisplayTaskRecycler extends FirebaseRecyclerAdapter<choicemodel,Dis
                             public void onCancelled(@NonNull @NotNull DatabaseError error) {
 
                             }
+
+
                         });
+
 
 
 
@@ -246,6 +256,8 @@ public class DisplayTaskRecycler extends FirebaseRecyclerAdapter<choicemodel,Dis
         // Toast.makeText(context,"Downloaded",Toast.LENGTH_SHORT).show();
     }
     });
+
+
 }
 
 
