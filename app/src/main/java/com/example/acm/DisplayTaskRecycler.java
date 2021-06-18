@@ -1,5 +1,6 @@
 package com.example.acm;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -193,6 +194,7 @@ public class DisplayTaskRecycler extends FirebaseRecyclerAdapter<choicemodel,Dis
 
         DatabaseReference  newref= FirebaseDatabase.getInstance().getReference("Student Details");
                         newref.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @SuppressLint("ResourceAsColor")
                             @Override
                             public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
                                 for(DataSnapshot s: snapshot.getChildren())
@@ -206,6 +208,15 @@ public class DisplayTaskRecycler extends FirebaseRecyclerAdapter<choicemodel,Dis
                                                 Log.i("asgsdmkcfkdsdadhsad", UploadInfo.getName());
 
                                                 Log.i("oiedocfgvfrgjccvfjc", data.child("isDone").getValue().toString());
+
+                                                if(data.child("isDone").getValue().toString().equals("Accept"))
+                                                {
+                                                    holder.Status.setTextColor(R.color._light_green);
+                                                }
+                                                else
+                                                    {
+                                                    holder.Status.setTextColor(R.color.orange_red);
+                                                }
                                                 holder.Status.setText(data.child("isDone").getValue().toString());
                                                 holder.Submit.setEnabled(false);
                                             }
