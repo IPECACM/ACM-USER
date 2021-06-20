@@ -6,6 +6,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -136,10 +137,12 @@ public class profile_picture extends AppCompatActivity {
 
     private void uploadProfileImage() {
 
-        final ProgressDialog progressDialog = new ProgressDialog(this);
-        progressDialog.setTitle("Set your profile");
-        progressDialog.setMessage("Please wait, while we are setting your data ");
-        progressDialog.show();
+//        final ProgressDialog progressDialog = new ProgressDialog(this);
+//        progressDialog.setTitle("Set your profile");
+//        progressDialog.setMessage("Please wait, while we are setting your data ");
+//        progressDialog.show();
+        final loading_class loading_class=new loading_class(this);
+        loading_class.startLoading();
 
         if (imageUri != null)
         {
@@ -171,8 +174,16 @@ public class profile_picture extends AppCompatActivity {
 
                         databaseReference.child(mAuth.getCurrentUser().getUid()).updateChildren(userMap);
 
-                        progressDialog.dismiss();
+                        Handler handler=new Handler();
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
 
+                                loading_class.dismiss();
+                            }
+                        },2000);
+                        //progressDialog.dismiss();
+                        Toast.makeText(profile_picture.this, "Data update", Toast.LENGTH_SHORT).show();
 
                     }
 
@@ -180,7 +191,15 @@ public class profile_picture extends AppCompatActivity {
             });
         }
         else {
-            progressDialog.dismiss();
+            Handler handler=new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+
+                    loading_class.dismiss();
+                }
+            },2000);
+            //progressDialog.dismiss();
             Toast.makeText(this, "Data update", Toast.LENGTH_SHORT).show();
         }
 

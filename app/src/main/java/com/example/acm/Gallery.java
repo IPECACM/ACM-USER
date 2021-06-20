@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -36,12 +37,13 @@ public class Gallery extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gallery);
+        final loading_class loading_class=new loading_class(Gallery.this);
+        loading_class.startLoading();
         recyclerView = (RecyclerView) findViewById(R.id.rv);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(Gallery.this,3));
 
         OData = FirebaseDatabase.getInstance().getReference("Gallery");
-
         OData.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -65,5 +67,38 @@ public class Gallery extends AppCompatActivity {
 
             }
         });
+
+        Handler handler=new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+                loading_class.dismiss();
+            }
+        },2000);
+
+//        OData.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                list.clear();
+//                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+//
+//                    gallerymodel imageUploadInfo = postSnapshot.getValue(gallerymodel.class);
+//
+//                    list.add(imageUploadInfo);
+//                }
+//
+//                adapter = new galleryAdapter(getApplicationContext(), list);
+//
+//                recyclerView.setAdapter(adapter);
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//                Toast.makeText(Gallery.this,databaseError.getMessage(),Toast.LENGTH_SHORT).show();
+//
+//
+//            }
+//        });
     }
 }
