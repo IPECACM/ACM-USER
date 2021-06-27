@@ -12,7 +12,7 @@ import android.widget.ImageView;
 
 public class MainActivity2 extends AppCompatActivity  implements View.OnClickListener{
 
-    public CardView card1,card2,card3,card4,card5;
+    public CardView card1,card2,card3,card4,card5,card6;
     CardView card;
     private ImageView map;
     ImageView insta;
@@ -28,11 +28,13 @@ public class MainActivity2 extends AppCompatActivity  implements View.OnClickLis
         card3=(CardView) findViewById(R.id.card_3);
         card4=(CardView) findViewById(R.id.card_4);
         card5=(CardView)findViewById(R.id.card_5);
+        card6=(CardView)findViewById(R.id.card_6);
         card1.setOnClickListener(this);
         card2.setOnClickListener(this);
         card3.setOnClickListener(this);
         card4.setOnClickListener(this);
         card5.setOnClickListener(this);
+        card6.setOnClickListener(this);
         card=findViewById(R.id.card);
         map = (ImageView) findViewById(R.id.map);
         insta=findViewById(R.id.insta);
@@ -93,11 +95,15 @@ public class MainActivity2 extends AppCompatActivity  implements View.OnClickLis
                 i = new Intent(this, Gallery.class);
                 startActivity(i);
                 break;
+            case R.id.card_6:
+            {
+                gotoUrl("https://acm.ipec.org.in/prism.pdf");
+            }
+            break;
             case R.id.card_3:
                 i = new Intent(this, teamPage.class);
                 startActivity(i);
                 break;
-
 
         }
     }

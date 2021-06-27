@@ -37,6 +37,7 @@ public class student_dashbord extends AppCompatActivity {
     FirebaseAuth fb;
     Dialog dialogue;
     CardView button;
+
     //Button log;
 
 
@@ -59,11 +60,23 @@ public class student_dashbord extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+
+    @Override
+    public void onBackPressed() {
+
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.addCategory(Intent.CATEGORY_HOME);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_dashbord);
         fb = FirebaseAuth.getInstance();
+
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Student Details").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
         reference.addValueEventListener(new ValueEventListener() {
@@ -91,6 +104,13 @@ public class student_dashbord extends AppCompatActivity {
         EditText edit_password=dialogue.findViewById(R.id.edit_password);
         Button update=dialogue.findViewById(R.id.update);
         Button cancel=dialogue.findViewById(R.id.cancel);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(student_dashbord.this, sig_selection.class);
+                startActivity(i);
+            }
+        });
         //log=findViewById(R.id.logout);
 
 //        log.setOnClickListener(new View.OnClickListener() {
@@ -169,6 +189,8 @@ public class student_dashbord extends AppCompatActivity {
             }
         });
 
+
+
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -201,6 +223,7 @@ public class student_dashbord extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
 
 
 
