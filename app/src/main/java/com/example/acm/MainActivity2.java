@@ -9,6 +9,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 
 public class MainActivity2 extends AppCompatActivity  implements View.OnClickListener{
 
@@ -17,12 +20,15 @@ public class MainActivity2 extends AppCompatActivity  implements View.OnClickLis
     private ImageView map;
     ImageView insta;
     ImageView fb;
+    FirebaseAuth fauth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-
+fauth= FirebaseAuth.getInstance();
+FirebaseUser fuser= fauth.getCurrentUser();
          card1=(CardView)findViewById(R.id.card_1);
          card2=(CardView) findViewById(R.id.card_2);
         card3=(CardView) findViewById(R.id.card_3);
@@ -40,6 +46,12 @@ public class MainActivity2 extends AppCompatActivity  implements View.OnClickLis
         insta=findViewById(R.id.insta);
         fb=findViewById(R.id.fb);
 
+
+        if(fuser!=null)
+        {
+            Intent i= new Intent(MainActivity2.this, student_dashbord.class);
+            startActivity(i);
+        }
         fb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -18,6 +18,7 @@ public class Home extends Application {
 Intent i= new Intent(Home.this,student_dashbord.class);
            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 startActivity(i);
+
        }
     }
 }

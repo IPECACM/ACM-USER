@@ -47,6 +47,14 @@ public class Login extends AppCompatActivity {
                 {
                     Toast.makeText(Login.this,"Fill All Fields",Toast.LENGTH_SHORT).show();
                 }
+                else if(firebaseAuth.getCurrentUser()!=null)
+                {
+                    Intent i= new Intent(Login.this,student_dashbord.class);
+                    i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(i);
+
+                }
+
                 else
                 {
                     LoginUser();
