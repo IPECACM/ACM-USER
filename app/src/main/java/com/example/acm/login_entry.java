@@ -27,7 +27,7 @@ public class login_entry extends AppCompatActivity {
 
     TextView name;
     ImageView profileImageView;
-    Animation topanim,bottomanim;
+    Animation topanim,bottomanim,fadein;
     FirebaseAuth fb;
 
     @Override
@@ -40,8 +40,9 @@ public class login_entry extends AppCompatActivity {
         profileImageView=findViewById(R.id.profile_image);
         name=findViewById(R.id.name);
 
-        topanim= AnimationUtils.loadAnimation(this,R.anim.top_annimation);
-        bottomanim= AnimationUtils.loadAnimation(this,R.anim.bottom_annimation);
+        //topanim= AnimationUtils.loadAnimation(this,R.anim.top_annimation);
+        //bottomanim= AnimationUtils.loadAnimation(this,R.anim.bottom_annimation);
+        fadein= AnimationUtils.loadAnimation(this,R.anim.fadein);
 
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Student Details").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
@@ -50,24 +51,24 @@ public class login_entry extends AppCompatActivity {
             public void onDataChange(@NotNull DataSnapshot datasnapshot) {
 
                 Log.d("ADebug", "Value: " + (datasnapshot.child("Name").getValue().toString()));
-                name.setText("Welcome "+datasnapshot.child("Name").getValue().toString());
+                name.setText("Hello "+datasnapshot.child("Name").getValue().toString());
 
-                if (datasnapshot.hasChild("image"))
-                {
-                    String image = datasnapshot.child("image").getValue().toString();
-                    Picasso.get().load(image).into(profileImageView);
-                }
-                else {
-                    Toast.makeText(login_entry.this, "Please Upload a profile Pic", Toast.LENGTH_SHORT).show();
-                }
+//                if (datasnapshot.hasChild("image"))
+//                {
+//                    String image = datasnapshot.child("image").getValue().toString();
+//                    Picasso.get().load(image).into(profileImageView);
+//                }
+//                else {
+//                    //Toast.makeText(login_entry.this, "Please Upload a profile Pic", Toast.LENGTH_SHORT).show();
+//                }
             }
             @Override
             public void onCancelled(@NotNull DatabaseError error) {
 
             }
         });
-        profileImageView.setAnimation(topanim);
-        name.setAnimation(bottomanim);
+        //profileImageView.setAnimation(fadein);
+        name.setAnimation(fadein);
         final Handler h = new Handler();
         h.postDelayed(new Runnable() {
 
