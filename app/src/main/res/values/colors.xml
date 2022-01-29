@@ -290,4 +290,8 @@
 
     <color name="black">#000000</color>
 
+    <color name="darker_blue">#000080</color>
+
+    <color name="lighter_blue">#127DF1</color>
+
 </resources>

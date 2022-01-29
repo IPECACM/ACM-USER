@@ -2,8 +2,11 @@ package com.example.acm;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
+import android.animation.ObjectAnimator;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -30,10 +33,19 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        getSupportActionBar().hide();
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            int startColor = getWindow().getStatusBarColor();
+            int endColor = ContextCompat.getColor(this,R.color.darker_blue);
+            ObjectAnimator.ofArgb(getWindow(), "statusBarColor", startColor, endColor).start();
+        }
         email=findViewById(R.id.email);
         password=findViewById(R.id.password);
         Login=findViewById(R.id.login);
          firebaseAuth=FirebaseAuth.getInstance();
+
 
 
 
@@ -43,10 +55,22 @@ public class Login extends AppCompatActivity {
                 Email = email.getText().toString();
                 Password = password.getText().toString();
 
-                if(TextUtils.isEmpty(Email)|| TextUtils.isEmpty(Password))
+                String checkEmail = email.getText().toString();
+                String checkPass = password.getText().toString();
+
+
+                if(checkEmail.isEmpty())
                 {
-                    Toast.makeText(Login.this,"Fill All Fields",Toast.LENGTH_SHORT).show();
+                    email.setError("Enter a valid Email");
+                    email.requestFocus();
                 }
+
+                else if(checkPass.isEmpty())
+                {
+                    password.setError("Enter a valid password");
+                    password.requestFocus();
+                }
+
                 else if(firebaseAuth.getCurrentUser()!=null)
                 {
                     Intent i= new Intent(Login.this,student_dashbord.class);
