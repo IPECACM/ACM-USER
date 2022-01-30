@@ -35,6 +35,9 @@ public class Notices extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notices);
 
+        getSupportActionBar().setTitle("NOTICES");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         recyclerView = (RecyclerView) findViewById(R.id.rvnotice);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(Notices.this));
@@ -62,5 +65,11 @@ public class Notices extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
 }

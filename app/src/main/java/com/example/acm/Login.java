@@ -76,6 +76,7 @@ public class Login extends AppCompatActivity {
                     Intent i= new Intent(Login.this,student_dashbord.class);
                     i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(i);
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
 
                 }
 
@@ -100,6 +101,7 @@ public class Login extends AppCompatActivity {
                     password.setText("");
                     Intent i= new Intent(Login.this,login_entry.class);
                     startActivity(i);
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
 
                 }
                 else
@@ -110,5 +112,10 @@ public class Login extends AppCompatActivity {
 
             }
         });
+    }
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
 }

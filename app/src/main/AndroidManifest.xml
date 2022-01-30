@@ -38,9 +38,13 @@
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/AppTheme" />
         <activity android:name=".primeCore" />
-        <activity android:name=".teamPage" />
-        <activity android:name=".Gallery" />
-        <activity android:name=".Notices" />
+        <activity android:name=".teamPage"
+            android:parentActivityName=".MainActivity2"
+            />
+        <activity android:name=".Gallery"
+            android:parentActivityName=".MainActivity2"/>
+        <activity android:name=".Notices"
+            android:parentActivityName=".MainActivity2"/>
         <activity android:name=".AddFaculty" />
         <activity android:name=".Test" />
         <activity
