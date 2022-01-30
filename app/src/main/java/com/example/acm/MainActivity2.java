@@ -1,6 +1,7 @@
 package com.example.acm;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.browser.customtabs.CustomTabsIntent;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
@@ -47,6 +48,7 @@ FirebaseUser fuser= fauth.getCurrentUser();
         fb=findViewById(R.id.fb);
 
 
+
         if(fuser!=null)
         {
             Intent i= new Intent(MainActivity2.this, student_dashbord.class);
@@ -91,7 +93,8 @@ FirebaseUser fuser= fauth.getCurrentUser();
         switch (view.getId()) {
             case R.id.card_1:
             {
-           gotoUrl("https://acm.ipec.org.in/");
+          gotoUrl("https://acm.ipec.org.in/");
+
             }
             break;
             case R.id.card_2:
@@ -121,7 +124,9 @@ FirebaseUser fuser= fauth.getCurrentUser();
     }
 
     private void gotoUrl(String s) {
-      Uri uri= Uri.parse(s);
-      startActivity(new Intent(Intent.ACTION_VIEW,uri));
+        CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
+        CustomTabsIntent customTabsIntent = builder.build();
+        customTabsIntent.launchUrl(MainActivity2.this,Uri.parse(s));
+
     }
 }
