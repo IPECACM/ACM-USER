@@ -15,6 +15,10 @@ public class teamPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_team_page);
+
+        getSupportActionBar().setTitle("ACM TEAM");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         Faculty=findViewById(R.id.faculty);
         Prime=findViewById(R.id.prime);
         Core=findViewById(R.id.core);
@@ -39,5 +43,12 @@ public class teamPage extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
 }

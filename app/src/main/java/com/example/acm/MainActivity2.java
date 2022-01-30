@@ -2,9 +2,12 @@ package com.example.acm;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.core.content.ContextCompat;
 
+import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -27,6 +30,14 @@ public class MainActivity2 extends AppCompatActivity  implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        getSupportActionBar().hide();
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            int startColor = getWindow().getStatusBarColor();
+            int endColor = ContextCompat.getColor(this,R.color.darker_blue);
+            ObjectAnimator.ofArgb(getWindow(), "statusBarColor", startColor, endColor).start();
+        }
+
 fauth= FirebaseAuth.getInstance();
 FirebaseUser fuser= fauth.getCurrentUser();
          card1=(CardView)findViewById(R.id.card_1);
@@ -97,24 +108,29 @@ FirebaseUser fuser= fauth.getCurrentUser();
             case R.id.card_2:
                 i = new Intent(this, Login.class);
                 startActivity(i);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
             case R.id.card_4:
                 i = new Intent(this, Notices.class);
                 startActivity(i);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
 
             case R.id.card_5:
                 i = new Intent(this, Gallery.class);
                 startActivity(i);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
             case R.id.card_6:
             {
                 gotoUrl("https://acm.ipec.org.in/prism.pdf");
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
             break;
             case R.id.card_3:
                 i = new Intent(this, teamPage.class);
                 startActivity(i);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
 
         }

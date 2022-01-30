@@ -37,6 +37,9 @@ public class Gallery extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gallery);
+        getSupportActionBar().setTitle("MEMORIES");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         final loading_class loading_class=new loading_class(Gallery.this);
         loading_class.startLoading();
         recyclerView = (RecyclerView) findViewById(R.id.rv);
@@ -100,5 +103,11 @@ public class Gallery extends AppCompatActivity {
 //
 //            }
 //        });
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
 }
