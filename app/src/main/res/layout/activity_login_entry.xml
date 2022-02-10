@@ -26,7 +26,7 @@
         android:id="@+id/name"
         android:layout_width="245dp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/aladin"
+        android:fontFamily="@font/font_satisfy"
         android:layout_gravity="center_horizontal"
         android:gravity="center"
         android:text=" "

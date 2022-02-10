@@ -13,13 +13,26 @@
         <entry key="..\:/ACM Student App/ACM-USER/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/ACM Student App/ACM-USER/app/src/main/res/layout/primecorelayout.xml" value="0.20416666666666666" />
         <entry key="..\:/ACM-USER/app/src/main/res/drawable/dual_tone_statusbar.xml" value="0.2115" />
+        <entry key="..\:/ACM-USER/app/src/main/res/layout/activity_about_us.xml" value="0.20416666666666666" />
+        <entry key="..\:/ACM-USER/app/src/main/res/layout/activity_add_faculty.xml" value="0.20416666666666666" />
         <entry key="..\:/ACM-USER/app/src/main/res/layout/activity_check.xml" value="0.20416666666666666" />
         <entry key="..\:/ACM-USER/app/src/main/res/layout/activity_choose_sig.xml" value="0.20416666666666666" />
         <entry key="..\:/ACM-USER/app/src/main/res/layout/activity_fullscreenactivity.xml" value="0.20416666666666666" />
+        <entry key="..\:/ACM-USER/app/src/main/res/layout/activity_gallery.xml" value="0.20416666666666666" />
         <entry key="..\:/ACM-USER/app/src/main/res/layout/activity_login.xml" value="0.20416666666666666" />
+        <entry key="..\:/ACM-USER/app/src/main/res/layout/activity_login_entry.xml" value="0.20416666666666666" />
         <entry key="..\:/ACM-USER/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/ACM-USER/app/src/main/res/layout/activity_main2.xml" value="0.20416666666666666" />
+        <entry key="..\:/ACM-USER/app/src/main/res/layout/activity_student_dashbord.xml" value="0.25" />
+        <entry key="..\:/ACM-USER/app/src/main/res/layout/activity_team_page.xml" value="0.20416666666666666" />
+        <entry key="..\:/ACM-USER/app/src/main/res/layout/activity_test.xml" value="0.20416666666666666" />
         <entry key="..\:/ACM-USER/app/src/main/res/layout/animation.xml" value="0.20416666666666666" />
+        <entry key="..\:/ACM-USER/app/src/main/res/layout/custom_loading.xml" value="0.20416666666666666" />
+        <entry key="..\:/ACM-USER/app/src/main/res/layout/dialogue_popup.xml" value="0.20416666666666666" />
+        <entry key="..\:/ACM-USER/app/src/main/res/layout/displaytasklayout.xml" value="0.20416666666666666" />
+        <entry key="..\:/ACM-USER/app/src/main/res/layout/faculty_item_layout.xml" value="0.20416666666666666" />
+        <entry key="..\:/ACM-USER/app/src/main/res/layout/no_data_found.xml" value="0.20416666666666666" />
+        <entry key="..\:/ACM-USER/app/src/main/res/layout/test.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>
