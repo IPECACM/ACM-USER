@@ -2,8 +2,11 @@ package com.example.acm;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.core.content.ContextCompat;
 
+import android.animation.ObjectAnimator;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 
@@ -15,6 +18,14 @@ public class teamPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_team_page);
+
+        getSupportActionBar().hide();
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            int startColor = getWindow().getStatusBarColor();
+            int endColor = ContextCompat.getColor(this,R.color.darker_blue);
+            ObjectAnimator.ofArgb(getWindow(), "statusBarColor", startColor, endColor).start();
+        }
 
         getSupportActionBar().setTitle("ACM TEAM");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
