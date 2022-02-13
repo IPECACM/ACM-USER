@@ -2,9 +2,12 @@ package com.example.acm;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.animation.ObjectAnimator;
+import android.os.Build;
 import android.os.Bundle;
 
 import com.google.firebase.database.DataSnapshot;
@@ -38,6 +41,8 @@ public class primeCore extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(primeCore.this));
 
+        getSupportActionBar().hide();
+
         OData = FirebaseDatabase.getInstance().getReference("Members Details").child("Prime Core");
 
         OData.addValueEventListener(new ValueEventListener() {
@@ -61,6 +66,12 @@ public class primeCore extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
 }
 
