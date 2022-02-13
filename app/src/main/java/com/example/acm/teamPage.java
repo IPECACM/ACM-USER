@@ -27,6 +27,7 @@ public class teamPage extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i= new Intent(teamPage.this,AddFaculty.class);
                 startActivity(i);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
         Prime.setOnClickListener(new View.OnClickListener() {
@@ -34,6 +35,7 @@ public class teamPage extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i= new Intent(teamPage.this,primeCore.class);
                 startActivity(i);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
         Core.setOnClickListener(new View.OnClickListener() {
@@ -41,6 +43,7 @@ public class teamPage extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i= new Intent(teamPage.this,CoreMembers.class);
                 startActivity(i);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
 

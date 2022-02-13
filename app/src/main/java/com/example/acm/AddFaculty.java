@@ -43,6 +43,8 @@ public class AddFaculty extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(AddFaculty.this));
 
+        getSupportActionBar().hide();
+
         OData = FirebaseDatabase.getInstance().getReference("Members Details").child("Faculty");
 
         OData.addValueEventListener(new ValueEventListener() {
@@ -67,5 +69,11 @@ public class AddFaculty extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
 }

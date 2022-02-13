@@ -39,6 +39,8 @@ public class CoreMembers extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(CoreMembers.this));
 
+        getSupportActionBar().hide();
+
         OData = FirebaseDatabase.getInstance().getReference("Members Details").child("Core Members");
 
         OData.addValueEventListener(new ValueEventListener() {
@@ -62,6 +64,12 @@ public class CoreMembers extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
 }
 
