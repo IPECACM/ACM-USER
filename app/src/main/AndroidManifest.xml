@@ -18,7 +18,9 @@
             android:noHistory="true">
         </activity>
         <activity android:name=".profile_picture" />
-        <activity android:name=".student_dashbord" />
+        <activity android:name=".student_dashbord"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            />
         <activity android:name=".MainActivity2" />
         <activity android:name=".MainActivity" />
 

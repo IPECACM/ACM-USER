@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:mlns="http://schemas.android.com/apk/res-auto"
+    >
+   <item android:id="@+id/menu_aboutus"
+
+       android:title="About Us"
+       />
+
+    <item android:id="@+id/menu_notices"
+
+        android:title="Notices"
+        />
+
+    <item android:id="@+id/menu_gallery"
+
+        android:title="Gallery"
+        />
+    <item android:id="@+id/menu_team"
+
+
+        android:title="Team ACM"
+        />
+    <item android:id="@+id/logout"
+        android:title="Logout">
+
+    </item>
+</menu>

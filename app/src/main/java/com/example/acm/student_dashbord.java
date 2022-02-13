@@ -1,10 +1,16 @@
 package com.example.acm;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.browser.customtabs.CustomTabsIntent;
 import androidx.cardview.widget.CardView;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+
 import android.app.Dialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.Layout;
@@ -19,8 +25,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
+//import android.widget.Toolbar;
 
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -32,6 +39,9 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
+import androidx.appcompat.widget.Toolbar;
+import androidx.appcompat.app.AppCompatActivity;
+
 public class student_dashbord extends AppCompatActivity {
 
     FirebaseAuth fb;
@@ -39,6 +49,11 @@ public class student_dashbord extends AppCompatActivity {
     CardView button;
 
     //Button log;
+
+    // Navigation drawer ke liye intialize kiye gye objects
+    NavigationView nav;
+    ActionBarDrawerToggle toggle;
+    DrawerLayout drawerLayout;
 
 
     @Override
@@ -77,14 +92,20 @@ public class student_dashbord extends AppCompatActivity {
         setContentView(R.layout.activity_student_dashbord);
         fb = FirebaseAuth.getInstance();
 
-
+       // getSupportActionBar().hide();
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Student Details").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NotNull DataSnapshot datasnapshot) {
 
+                //Navigation drawer
+                TextView name = findViewById(R.id.name);
+                TextView email = findViewById(R.id.email);
+
                 Log.d("ADebug", "Value: " + (datasnapshot.child("Name").getValue().toString()));
                 getSupportActionBar().setTitle("Welcome to your dashbord "+datasnapshot.child("Name").getValue().toString());
+                name.setText(datasnapshot.child("Name").getValue().toString());
+                email.setText(datasnapshot.child("Email").getValue().toString());
             }
             @Override
             public void onCancelled(@NotNull DatabaseError error) {
@@ -104,6 +125,10 @@ public class student_dashbord extends AppCompatActivity {
         EditText edit_password=dialogue.findViewById(R.id.edit_password);
         Button update=dialogue.findViewById(R.id.update);
         Button cancel=dialogue.findViewById(R.id.cancel);
+
+
+
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -224,8 +249,63 @@ public class student_dashbord extends AppCompatActivity {
             }
         });
 
+        // Adding Navigation Drawer
+           Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+           setSupportActionBar(toolbar);
 
+           nav=(NavigationView)findViewById(R.id.navmenu);
+           drawerLayout = (DrawerLayout)findViewById(R.id.drawer);
 
+           toggle=new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navopen,R.string.navclose);
+           drawerLayout.addDrawerListener(toggle);
+           toggle.syncState();
+
+           nav.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+               @Override
+               public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                      Intent i;
+                   switch (menuItem.getItemId()) {
+                       case R.id.menu_aboutus:
+                           Toast.makeText(getApplicationContext(), "Home panel is open", Toast.LENGTH_LONG).show();
+                           gotoUrl("https://acm.ipec.org.in/");
+                           drawerLayout.closeDrawer(GravityCompat.START);
+                           break;
+
+                       case R.id.menu_notices:
+                           Toast.makeText(getApplicationContext(), "Call panel is open", Toast.LENGTH_LONG).show();
+                           i = new Intent(student_dashbord.this, Notices.class);
+                           startActivity(i);
+                           drawerLayout.closeDrawer(GravityCompat.START);
+                           break;
+
+                       case R.id.menu_gallery:
+                           Toast.makeText(getApplicationContext(), "Setting panel is open", Toast.LENGTH_LONG).show();
+                           i = new Intent(student_dashbord.this, Gallery.class);
+                           startActivity(i);
+                           drawerLayout.closeDrawer(GravityCompat.START);
+                           break;
+
+                       case R.id.menu_team:
+                           i = new Intent(student_dashbord.this, teamPage.class);
+                           startActivity(i);
+                           break;
+
+                       case R.id.logout:
+                           fb.signOut();
+                            i= new Intent(student_dashbord.this,MainActivity2.class);
+                           startActivity(i);
+                           return true;
+                   }
+
+                   return true;
+               }
+           });
+
+    }
+    private void gotoUrl(String s) {
+        CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
+        CustomTabsIntent customTabsIntent = builder.build();
+        customTabsIntent.launchUrl(student_dashbord.this, Uri.parse(s));
 
     }
 }

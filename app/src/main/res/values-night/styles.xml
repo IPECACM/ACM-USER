@@ -7,6 +7,9 @@
         <item name="colorPrimaryDark">#000080</item>
         <item name="colorAccent">#ffffff</item>
         <item name="android:windowAnimationStyle">@style/dailogue</item>
+
+<!--        <item name="windowActionBar">false</item>-->
+<!--        <item name="windowNoTitle">true</item>-->
     </style>
 
     <style name="splash_screen" parent="Theme.MaterialComponents.DayNight.NoActionBar">
