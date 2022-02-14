@@ -38,7 +38,7 @@ public class login_entry extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_entry);
 
-       // getSupportActionBar().hide();
+      //  getSupportActionBar().hide();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             int startColor = getWindow().getStatusBarColor();
@@ -63,7 +63,7 @@ public class login_entry extends AppCompatActivity {
             public void onDataChange(@NotNull DataSnapshot datasnapshot) {
 
                 Log.d("ADebug", "Value: " + (datasnapshot.child("Name").getValue().toString()));
-            //    name.setText("Hello "+datasnapshot.child("Name").getValue().toString());
+               name.setText("Hello "+datasnapshot.child("Name").getValue().toString());
 
 //                if (datasnapshot.hasChild("image"))
 //                {
