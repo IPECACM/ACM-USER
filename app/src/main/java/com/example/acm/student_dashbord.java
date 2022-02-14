@@ -56,24 +56,24 @@ public class student_dashbord extends AppCompatActivity {
     DrawerLayout drawerLayout;
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater=getMenuInflater();
-         inflater.inflate(R.menu.student_setting,menu);
-        return true;
-  }
+  //  @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        MenuInflater inflater=getMenuInflater();
+//         inflater.inflate(R.menu.student_setting,menu);
+//        return true;
+//  }
 
-    @Override
-    public boolean onOptionsItemSelected(@NotNull MenuItem item) {
-        switch(item.getItemId()){
-            case R.id.logout:
-                fb.signOut();
-                Intent i= new Intent(student_dashbord.this,MainActivity2.class);
-                startActivity(i);
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
+  //  @Override
+//    public boolean onOptionsItemSelected(@NotNull MenuItem item) {
+//        switch(item.getItemId()){
+//            case R.id.logout:
+//                fb.signOut();
+//                Intent i= new Intent(student_dashbord.this,MainActivity2.class);
+//                startActivity(i);
+//                return true;
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
 
 
     @Override
@@ -259,6 +259,8 @@ public class student_dashbord extends AppCompatActivity {
            toggle=new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navopen,R.string.navclose);
            drawerLayout.addDrawerListener(toggle);
            toggle.syncState();
+
+         //  getSupportFragmentManager().beginTransaction().replace(R.id.container, new Homefragment()).commit();
 
            nav.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
                @Override
