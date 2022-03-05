@@ -1,27 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:mlns="http://schemas.android.com/apk/res-auto"
+
     >
    <item android:id="@+id/menu_aboutus"
-
+       android:icon="@drawable/dashboard"
        android:title="About Us"
        />
 
     <item android:id="@+id/menu_notices"
-
+        android:icon="@drawable/invoice"
         android:title="Notices"
+
         />
 
     <item android:id="@+id/menu_gallery"
-
+        android:icon="@drawable/ic_magzine"
         android:title="Gallery"
         />
     <item android:id="@+id/menu_team"
-
-
+        android:icon="@drawable/ic_baseline_group_24"
         android:title="Team ACM"
         />
     <item android:id="@+id/logout"
+        android:icon="@drawable/ic_baseline_login_24"
         android:title="Logout">
 
     </item>

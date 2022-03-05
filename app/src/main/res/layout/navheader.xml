@@ -2,20 +2,25 @@
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/blue"
+    android:background="@color/white"
     android:orientation="vertical"
     >
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+
+        android:layout_marginTop="10dp"
         android:src="@drawable/profile"
-        />
+         />
+
     <TextView
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/aquamarine"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         android:textSize="30dp"
         android:text="Name"
         />
@@ -23,7 +28,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/aquamarine"
+        android:textColor="#82838a"
         android:id="@+id/email"
         android:textSize="20dp"
         android:text="Email Id"
