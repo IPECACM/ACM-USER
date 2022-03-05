@@ -47,9 +47,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="60dp"
         android:layout_weight="3"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/cardView"
@@ -72,9 +72,9 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"
-                app:cardBackgroundColor="@android:color/transparent"
-                app:cardCornerRadius="30dp"
-                app:cardElevation="0dp">
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="10dp">
 
 
                 <LinearLayout
@@ -89,18 +89,17 @@
                         android:layout_height="80dp"
                         android:layout_margin="20dp"
                         android:background="@drawable/general_img_background"
-
                         android:padding="25dp"
                         android:src="@drawable/dashboard"
-                        app:tint="#fff" />
+                        app:tint="#3f609c" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/lato_black"
                         android:text="About us"
-                        android:textColor="#257FC5"
-                        android:textSize="22sp" />
+                        android:textColor="#82838a"
+                        android:textSize="15sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -114,9 +113,9 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"
-                app:cardBackgroundColor="@android:color/transparent"
-                app:cardCornerRadius="30dp"
-                app:cardElevation="0dp">
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="10dp">
 
 
                 <LinearLayout
@@ -133,15 +132,15 @@
                         android:background="@drawable/transport_ing_background"
                         android:padding="25dp"
                         android:src="@drawable/bus"
-                        app:tint="#fff" />
+                        app:tint="#3f609c" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/lato_black"
                         android:text="ACM Member's Login"
-                        android:textColor="#7159CF"
-                        android:textSize="12sp" />
+                        android:textColor="#82838a"
+                        android:textSize="15sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
         </LinearLayout>
@@ -161,9 +160,9 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"
-                app:cardBackgroundColor="@android:color/transparent"
-                app:cardCornerRadius="30dp"
-                app:cardElevation="0dp">
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="10dp">
 
 
                 <LinearLayout
@@ -180,15 +179,15 @@
                         android:background="@drawable/shopping_ing_background"
                         android:padding="25dp"
                         android:src="@drawable/ic_baseline_group_24"
-                        app:tint="#fff" />
+                        app:tint="#3f609c" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/lato_black"
                         android:text="Team ACM"
-                        android:textColor="#D84DCA"
-                        android:textSize="22sp" />
+                        android:textColor="#82838a"
+                        android:textSize="15sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -202,9 +201,9 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"
-                app:cardBackgroundColor="@android:color/transparent"
-                app:cardCornerRadius="30dp"
-                app:cardElevation="0dp">
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="10dp">
 
 
                 <LinearLayout
@@ -221,15 +220,15 @@
                         android:background="@drawable/bills_img_background"
                         android:padding="25dp"
                         android:src="@drawable/invoice"
-                        app:tint="#fff" />
+                        app:tint="#3f609c" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/lato_black"
                         android:text="Notices"
-                        android:textColor="#C6500F"
-                        android:textSize="22sp" />
+                        android:textColor="#82838a"
+                        android:textSize="15sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
         </LinearLayout>
@@ -249,9 +248,9 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"
-                app:cardBackgroundColor="@android:color/transparent"
-                app:cardCornerRadius="30dp"
-                app:cardElevation="0dp">
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="10dp">
 
 
                 <LinearLayout
@@ -268,15 +267,15 @@
                         android:background="@drawable/entertainment_img_background"
                         android:padding="25dp"
                         android:src="@drawable/video_camera"
-                        app:tint="#fff" />
+                        app:tint="#3f609c" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/lato_black"
                         android:text="Memories"
-                        android:textColor="#5569BF"
-                        android:textSize="22sp" />
+                        android:textColor="#82838a"
+                        android:textSize="15sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -291,9 +290,9 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"
-                app:cardBackgroundColor="@android:color/transparent"
-                app:cardCornerRadius="30dp"
-                app:cardElevation="0dp">
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="10dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -309,15 +308,15 @@
                         android:background="@drawable/general_img_background"
                         android:padding="25dp"
                         android:src="@drawable/ic_magzine"
-                        app:tint="#fff" />
+                        app:tint="#3f609c" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/lato_black"
                         android:text="Magazine"
-                        android:textColor="#257FC5"
-                        android:textSize="22sp" />
+                        android:textColor="#82838a"
+                        android:textSize="15sp" />
                 </LinearLayout>
 
 

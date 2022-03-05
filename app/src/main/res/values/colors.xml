@@ -294,4 +294,6 @@
 
     <color name="lighter_blue">#127DF1</color>
 
+    <color name="colorWhite">#FFFFFF</color>
+
 </resources>
