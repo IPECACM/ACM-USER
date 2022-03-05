@@ -101,11 +101,13 @@ public class student_dashbord extends AppCompatActivity {
                 //Navigation drawer
                 TextView name = findViewById(R.id.name);
                 TextView email = findViewById(R.id.email);
+                TextView show_name = findViewById(R.id.show_name);
 
                 Log.d("ADebug", "Value: " + (datasnapshot.child("Name").getValue().toString()));
                 getSupportActionBar().setTitle("Welcome to your dashbord "+datasnapshot.child("Name").getValue().toString());
                 name.setText(datasnapshot.child("Name").getValue().toString());
                 email.setText(datasnapshot.child("Email").getValue().toString());
+                show_name.setText(datasnapshot.child("Name").getValue().toString());
             }
             @Override
             public void onCancelled(@NotNull DatabaseError error) {
