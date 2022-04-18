@@ -3,6 +3,8 @@
     xmlns:mlns="http://schemas.android.com/apk/res-auto"
 
     >
+ <group
+     android:checkableBehavior="single">
    <item android:id="@+id/menu_aboutus"
        android:icon="@drawable/dashboard"
        android:title="About Us"
@@ -27,4 +29,28 @@
         android:title="Logout">
 
     </item>
+ </group>
+
+<group android:checkableBehavior="single">
+    <item android:id="@+id/menu_email"
+       android:icon="@drawable/ic_email"
+       android:title="Email">
+
+   </item>
+
+    <item android:id="@+id/menu_share"
+        android:icon="@drawable/ic_baseline_share_24"
+        android:title="Share">
+
+    </item>
+
+    <item
+        android:id="@+id/menu_info"
+        android:icon="@drawable/ic_baseline_info_24"
+        android:title="App Info">
+
+
+    </item>
+</group>
+
 </menu>

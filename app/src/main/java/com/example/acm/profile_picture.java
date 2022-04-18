@@ -56,7 +56,7 @@ public class profile_picture extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_picture);
-
+        getSupportActionBar().setTitle("Profile Picture");
         mAuth = FirebaseAuth.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Student Details");
         storageProfilePicsRef = FirebaseStorage.getInstance().getReference().child("Profile Pic");
