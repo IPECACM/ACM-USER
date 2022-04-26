@@ -13,6 +13,12 @@
         <entry key="..\:/ACM Student App/ACM-USER/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/ACM Student App/ACM-USER/app/src/main/res/layout/primecorelayout.xml" value="0.20416666666666666" />
         <entry key="..\:/ACM-USER/app/src/main/res/drawable/dual_tone_statusbar.xml" value="0.2115" />
+        <entry key="..\:/ACM-USER/app/src/main/res/drawable/ic_baseline_arrow_back_ios_new_24.xml" value="0.1755" />
+        <entry key="..\:/ACM-USER/app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.1775" />
+        <entry key="..\:/ACM-USER/app/src/main/res/drawable/ic_baseline_info_24.xml" value="0.177" />
+        <entry key="..\:/ACM-USER/app/src/main/res/drawable/ic_baseline_login_24.xml" value="0.2105" />
+        <entry key="..\:/ACM-USER/app/src/main/res/drawable/ic_baseline_share_24.xml" value="0.1775" />
+        <entry key="..\:/ACM-USER/app/src/main/res/drawable/ic_email.xml" value="0.1775" />
         <entry key="..\:/ACM-USER/app/src/main/res/drawable/ripple_effect.xml" value="0.2115" />
         <entry key="..\:/ACM-USER/app/src/main/res/drawable/round_border.xml" value="0.2115" />
         <entry key="..\:/ACM-USER/app/src/main/res/layout/activity_about_us.xml" value="0.20416666666666666" />
@@ -20,6 +26,7 @@
         <entry key="..\:/ACM-USER/app/src/main/res/layout/activity_check.xml" value="0.20416666666666666" />
         <entry key="..\:/ACM-USER/app/src/main/res/layout/activity_choose_sig.xml" value="0.20416666666666666" />
         <entry key="..\:/ACM-USER/app/src/main/res/layout/activity_core_members.xml" value="0.20416666666666666" />
+        <entry key="..\:/ACM-USER/app/src/main/res/layout/activity_dev_team.xml" value="0.203125" />
         <entry key="..\:/ACM-USER/app/src/main/res/layout/activity_fullscreenactivity.xml" value="0.20416666666666666" />
         <entry key="..\:/ACM-USER/app/src/main/res/layout/activity_gallery.xml" value="0.20416666666666666" />
         <entry key="..\:/ACM-USER/app/src/main/res/layout/activity_login.xml" value="0.20416666666666666" />
@@ -27,6 +34,8 @@
         <entry key="..\:/ACM-USER/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/ACM-USER/app/src/main/res/layout/activity_main2.xml" value="0.2" />
         <entry key="..\:/ACM-USER/app/src/main/res/layout/activity_prime_core.xml" value="0.20416666666666666" />
+        <entry key="..\:/ACM-USER/app/src/main/res/layout/activity_profile_picture.xml" value="0.203125" />
+        <entry key="..\:/ACM-USER/app/src/main/res/layout/activity_sig_selection.xml" value="0.25" />
         <entry key="..\:/ACM-USER/app/src/main/res/layout/activity_student_dashbord.xml" value="0.25" />
         <entry key="..\:/ACM-USER/app/src/main/res/layout/activity_team_page.xml" value="0.20446096654275092" />
         <entry key="..\:/ACM-USER/app/src/main/res/layout/activity_test.xml" value="0.20416666666666666" />
@@ -43,6 +52,7 @@
         <entry key="..\:/ACM-USER/app/src/main/res/layout/notice_layout.xml" value="0.5" />
         <entry key="..\:/ACM-USER/app/src/main/res/layout/primecorelayout.xml" value="0.20416666666666666" />
         <entry key="..\:/ACM-USER/app/src/main/res/layout/test.xml" value="0.20416666666666666" />
+        <entry key="..\:/ACM-USER/app/src/main/res/menu/iconmenu.xml" value="0.203125" />
         <entry key="..\:/Users/Deepanshu/OneDrive/Desktop/ACM-USER/app/src/main/res/layout/activity_student_dashbord.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/Deepanshu/OneDrive/Desktop/ACM-USER/app/src/main/res/layout/fragment_homefragment.xml" value="0.24728260869565216" />
         <entry key="..\:/Users/Deepanshu/OneDrive/Desktop/ACM-USER/app/src/main/res/menu/header_menu.xml" value="0.25025641025641027" />

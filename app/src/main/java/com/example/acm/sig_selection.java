@@ -42,7 +42,7 @@ public class sig_selection extends AppCompatActivity {
         Fauth=FirebaseAuth.getInstance();
         databaseReference= FirebaseDatabase.getInstance().getReference();
         radioGroup=findViewById(R.id.radioGroup);
-
+        getSupportActionBar().setTitle("Your SIG's");
         soft=findViewById(R.id.rb1);
         python=findViewById(R.id.rb2);
         web=findViewById(R.id.rb3);

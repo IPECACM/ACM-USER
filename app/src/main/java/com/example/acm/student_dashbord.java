@@ -270,20 +270,17 @@ public class student_dashbord extends AppCompatActivity {
                       Intent i;
                    switch (menuItem.getItemId()) {
                        case R.id.menu_aboutus:
-                           Toast.makeText(getApplicationContext(), "Home panel is open", Toast.LENGTH_LONG).show();
                            gotoUrl("https://acm.ipec.org.in/");
                            drawerLayout.closeDrawer(GravityCompat.START);
                            break;
 
                        case R.id.menu_notices:
-                           Toast.makeText(getApplicationContext(), "Call panel is open", Toast.LENGTH_LONG).show();
                            i = new Intent(student_dashbord.this, Notices.class);
                            startActivity(i);
                            drawerLayout.closeDrawer(GravityCompat.START);
                            break;
 
                        case R.id.menu_gallery:
-                           Toast.makeText(getApplicationContext(), "Setting panel is open", Toast.LENGTH_LONG).show();
                            i = new Intent(student_dashbord.this, Gallery.class);
                            startActivity(i);
                            drawerLayout.closeDrawer(GravityCompat.START);
@@ -299,6 +296,37 @@ public class student_dashbord extends AppCompatActivity {
                             i= new Intent(student_dashbord.this,MainActivity2.class);
                            startActivity(i);
                            return true;
+
+                       case R.id.menu_email:
+                           Intent intent = new Intent(Intent.ACTION_SEND);
+                           String[] recipients = {"ipecacm@gmail.com"};
+                           intent.putExtra(Intent.EXTRA_EMAIL, recipients);
+                           intent.putExtra(Intent.EXTRA_SUBJECT, "Write Subject here");
+                           intent.putExtra(Intent.EXTRA_TEXT,"Enter the body ");
+                           intent.putExtra(Intent.EXTRA_CC,"mailcc@gmail.com");
+                           intent.setType("text/html");
+                           intent.setPackage("com.google.android.gm");
+                           startActivity(Intent.createChooser(intent, "Send mail"));
+                           break;
+
+                       case R.id.menu_share:
+                           try {
+                               Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                               shareIntent.setType("text/plain");
+                               shareIntent.putExtra(Intent.EXTRA_SUBJECT, "IPEC ACM");
+                               String shareMessage = "\nLet me recommend you this application developed for all the IPEC ACM students \n\n";
+                               shareMessage = shareMessage + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID + "\n\n";
+                               shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
+                               startActivity(Intent.createChooser(shareIntent, "Choose One"));
+                           }catch(Exception e){
+                               //e.toString();
+                           }
+                           break;
+
+                       case R.id.menu_info:
+                           i = new Intent(student_dashbord.this,DevTeam.class);
+                           startActivity(i);
+
                    }
 
                    return true;
